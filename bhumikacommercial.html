@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BHUMIKA  - Premium Commercial Spaces</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --gold: #D4AF37;
+            --dark-gold: #B8941E;
+            --black: #000000;
+            --off-black: #1a1a1a;
+            --white: #ffffff;
+            --light-gray: #f8f9fa;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--white);
+            color: var(--off-black);
+            overflow-x: hidden;
+            padding-top: 76px;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Navigation */
+        .navbar {
+            background: linear-gradient(135deg, var(--black) 0%, var(--off-black) 100%);
+            padding: 0.75rem 1rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            transition: all 0.3s ease;
+        }
+
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: transform 0.3s ease;
+        }
+
+        .navbar-logo {
+            width: 45px;
+            height: 45px;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+
+        .brand-text {
+            color: var(--gold);
+            font-size: 1.2rem;
+            letter-spacing: 0.5px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .navbar-toggler {
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            padding: 0.5rem 0.75rem;
+        }
+
+        .offcanvas-header {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            border-bottom: 2px solid #444;
+        }
+
+        .offcanvas-body {
+            background: linear-gradient(135deg, #212121 0%, #1a1a1a 100%);
+        }
+
+        .nav-link {
+            padding: 0.75rem 1rem;
+            margin: 0.25rem 0;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            color: #fff;
+        }
+
+        .nav-link:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            transform: translateX(5px);
+            color: var(--gold) !important;
+        }
+
+        .nav-link.active {
+            background-color: rgba(212, 175, 55, 0.2);
+            color: var(--gold) !important;
+        }
+
+        .nav-link i {
+            margin-right: 8px;
+            width: 20px;
+            text-align: center;
+        }
+
+        /* Banner Section */
+        .project-banner {
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.65), rgba(26, 26, 26, 0.5)),
+                url('bhumika.jpeg') center/cover no-repeat;
+            height: 75vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .banner-content {
+            text-align: center;
+            z-index: 2;
+            animation: fadeInUp 1.2s ease-out;
+        }
+
+        .banner-content h1 {
+            font-size: 4.5rem;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 1rem;
+            text-shadow: 3px 3px 15px rgba(0, 0, 0, 0.9);
+            letter-spacing: 3px;
+        }
+
+        .banner-accent {
+            width: 120px;
+            height: 3px;
+            background: var(--gold);
+            margin: 1.5rem auto;
+            position: relative;
+        }
+
+        .banner-accent::before,
+        .banner-accent::after {
+            content: '';
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: var(--gold);
+            border-radius: 50%;
+            top: -3.5px;
+        }
+
+        .banner-accent::before {
+            left: -20px;
+        }
+
+        .banner-accent::after {
+            right: -20px;
+        }
+
+        .banner-subtitle {
+            font-size: 1.4rem;
+            color: var(--gold);
+            font-weight: 300;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Stats Section */
+        .stats-section {
+            background: linear-gradient(135deg, var(--black) 0%, var(--off-black) 100%);
+            padding: 70px 0;
+            margin: 0;
+            box-shadow: inset 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 40px 20px;
+            color: var(--white);
+            transition: transform 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .stat-icon {
+            font-size: 3.5rem;
+            color: var(--gold);
+            margin-bottom: 1.5rem;
+        }
+
+        .stat-number {
+            font-size: 2.8rem;
+            font-weight: 700;
+            font-family: 'Playfair Display', serif;
+            color: var(--gold);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            color: var(--white);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 300;
+        }
+
+        /* Content Section */
+        .project-content {
+            margin: 80px 0;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--black);
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 70%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--gold), var(--dark-gold));
+        }
+
+        /* Details Table */
+        .details-card {
+            background: var(--white);
+            border-radius: 12px;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            border: 2px solid #f0f0f0;
+            margin-bottom: 60px;
+        }
+
+        .table {
+            margin-bottom: 0;
+        }
+
+        .table tbody tr {
+            border-bottom: 1px solid #f0f0f0;
+            transition: all 0.3s ease;
+        }
+
+        .table tbody tr:hover {
+            background-color: #fafafa;
+            transform: translateX(8px);
+        }
+
+        .table th {
+            background: linear-gradient(135deg, var(--black) 0%, var(--off-black) 100%);
+            color: var(--gold);
+            font-weight: 600;
+            padding: 25px 30px;
+            width: 35%;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            border: none;
+        }
+
+        .table td {
+            padding: 25px 30px;
+            color: var(--off-black);
+            font-weight: 500;
+            border: none;
+            font-size: 1.05rem;
+        }
+
+        /* Description Section */
+        .description-section {
+            background: linear-gradient(135deg, #fafafa 0%, #ffffff 100%);
+            padding: 70px 0;
+            margin: 60px 0;
+        }
+
+        .description-card {
+            background: var(--white);
+            padding: 50px;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+            border-left: 6px solid var(--gold);
+            position: relative;
+        }
+
+        .description-card::before {
+            content: '"';
+            position: absolute;
+            top: 20px;
+            left: 30px;
+            font-size: 8rem;
+            color: rgba(212, 175, 55, 0.1);
+            font-family: Georgia, serif;
+            line-height: 0;
+        }
+
+        .description-text {
+            font-size: 1.15rem;
+            line-height: 2;
+            color: #333;
+            text-align: justify;
+            position: relative;
+            z-index: 1;
+        }
+
+        .description-text p {
+            margin-bottom: 1.5rem;
+        }
+
+        .description-text h2 {
+            color: var(--black);
+            font-size: 2.2rem;
+            margin: 2.5rem 0 1.5rem 0;
+            padding-bottom: 1rem;
+            border-bottom: 3px solid var(--gold);
+        }
+
+        /* Key Features Grid */
+        .features-section {
+            padding: 80px 0;
+            background: var(--white);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 35px;
+            margin-top: 50px;
+        }
+
+        .feature-card {
+            background: linear-gradient(145deg, #ffffff, #f8f9fa);
+            padding: 40px 30px;
+            text-align: center;
+            border: 2px solid #f0f0f0;
+            border-radius: 12px;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.15), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .feature-card:hover::before {
+            left: 100%;
+        }
+
+        .feature-card:hover {
+            border-color: var(--gold);
+            transform: translateY(-15px);
+            box-shadow: 0 20px 50px rgba(212, 175, 55, 0.25);
+        }
+
+        .feature-icon {
+            font-size: 3.5rem;
+            color: var(--gold);
+            margin-bottom: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover .feature-icon {
+            transform: scale(1.15);
+        }
+
+        .feature-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--black);
+            margin-bottom: 0.8rem;
+        }
+
+        .feature-desc {
+            font-size: 0.95rem;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--black) 0%, var(--off-black) 100%);
+            padding: 80px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.15) 0%, transparent 70%);
+        }
+
+        .cta-section h3 {
+            color: var(--white);
+            font-size: 2.8rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        .cta-section p {
+            color: var(--gold);
+            font-size: 1.2rem;
+            margin-bottom: 3rem;
+            letter-spacing: 1px;
+        }
+
+        .cta-btn {
+            background: var(--gold);
+            color: var(--black);
+            border: none;
+            padding: 20px 60px;
+            font-size: 1.15rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: all 0.4s ease;
+            box-shadow: 0 10px 35px rgba(212, 175, 55, 0.4);
+            position: relative;
+            overflow: hidden;
+            border-radius: 50px;
+        }
+
+        .cta-btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: var(--white);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s ease, height 0.6s ease;
+        }
+
+        .cta-btn:hover::before {
+            width: 400px;
+            height: 400px;
+        }
+
+        .cta-btn:hover {
+            color: var(--black);
+            box-shadow: 0 15px 50px rgba(212, 175, 55, 0.6);
+            transform: translateY(-5px);
+        }
+
+        .cta-btn span {
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-btn i {
+            margin-right: 12px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Footer */
+        .footer {
+            background: linear-gradient(135deg, var(--black) 0%, var(--off-black) 100%);
+            color: var(--white);
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        .footer p {
+            margin: 0;
+            color: var(--gold);
+            font-weight: 300;
+            letter-spacing: 1.5px;
+            font-size: 1.05rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            body {
+                padding-top: 66px;
+            }
+
+            .banner-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .banner-subtitle {
+                font-size: 1rem;
+                letter-spacing: 2px;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .description-card {
+                padding: 30px 20px;
+            }
+
+            .description-text {
+                font-size: 1rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stat-card {
+                padding: 30px 15px;
+            }
+
+            .cta-btn {
+                padding: 18px 40px;
+                font-size: 1rem;
+            }
+
+            .table th,
+            .table td {
+                padding: 15px;
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .brand-text {
+                font-size: 1rem;
+            }
+
+            .navbar-logo {
+                width: 35px;
+                height: 35px;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .navbar-logo {
+                width: 100px;
+                height: 80px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-dark fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">
+                <img src="logo.png" alt="Bala ji Property Hub logo" class="navbar-logo">
+                <span class="brand-text"><b>BALA JI PROPERTY HUB</b></span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" style="color: var(--gold);">
+                        <i class="fas fa-building me-2"></i>Bala Ji Property Hub
+                    </h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="index.html">
+                                <i class="fas fa-home"></i>Home
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">
+                                <i class="fas fa-info-circle"></i>About
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">
+                                <i class="fas fa-envelope"></i>Contact
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Banner -->
+    <section class="project-banner">
+        <div class="banner-content">
+            <h1>Bhumika Commercial Spaces</h1>
+            <div class="banner-accent"></div>
+            <p class="banner-subtitle">Redefining Business Excellence in Faridabad</p>
+        </div>
+    </section>
+
+
+    <!-- Project Details -->
+    <div class="container project-content">
+        <div class="text-center mb-5">
+            <h2 class="section-title">Project Overview</h2>
+        </div>
+
+        <div class="details-card">
+            <table class="table">
+                <tbody>
+                    <tr>
+                        <th scope="row"><i class="fas fa-user-tie me-2"></i> Developer</th>
+                        <td>Bhumika Groups</td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><i class="fas fa-map-pin me-2"></i> Location</th>
+                        <td>Prime sectors of Faridabad</td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><i class="fas fa-building me-2"></i> Project Type</th>
+                        <td>Commercial – Retail & Office Spaces</td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><i class="fas fa-key me-2"></i> Possession</th>
+                        <td>Ready to Move / Under Construction Options Available</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Description Section -->
+    <section class="description-section">
+        <div class="container">
+            <div class="description-card">
+                <div class="description-text">
+                    <p>
+                        Bhumika Group brings a new wave of premium commercial developments to Faridabad, designed to
+                        create dynamic business environments for brands, retailers, and entrepreneurs. Known for their
+                        commitment to quality and innovation, Bhumika’s commercial projects combine modern architecture,
+                        smart infrastructure, and prime locations — ensuring a high-return investment for every buyer.
+
+                        Strategically situated in rapidly developing zones of Faridabad, Bhumika’s commercial spaces are
+                        surrounded by residential sectors, educational institutions, and corporate offices, offering
+                        consistent high footfall and rental potential. Each project is thoughtfully planned with wide
+                        frontages, ample parking, and a blend of retail, office, and food spaces — making them ideal for
+                        both startups and established brands.
+                    </p>
+
+
+                    <h2><i class="fas fa-trophy me-3" style="color: var(--gold);"></i>Why Invest in Bhumika Commercial Projects?
+                    </h2>
+                    <p>
+                       Bhumika Group’s commercial properties stand as a symbol of trust and growth. With modern layouts, prime accessibility, and sustainable designs, they cater perfectly to the evolving demands of NCR’s business landscape. Investors benefit from assured capital appreciation, steady rental income, and the strong legacy of a developer known for delivering excellence across India.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h3>Ready to Make Your Investment?</h3>
+            <p>Contact us today for exclusive offers and site visit</p>
+            <a href="contact.html" class="btn cta-btn">
+                <i class="fas fa-phone-alt"></i>
+                <span>Get In Touch</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Bala Ji Property Hub. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

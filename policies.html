@@ -1,0 +1,1231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Bala Ji Property Hub</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --gold: #D4AF37;
+            --light-gold: #F4E4B7;
+            --dark-gold: #B8941E;
+            --black: #000000;
+            --dark-gray: #1a1a1a;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--white);
+            color: var(--black);
+            overflow-x: hidden;
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            padding: 0.75rem 1rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            background-color: var(--black) !important;
+        }
+
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 600;
+            color: var(--gold) !important;
+        }
+
+        .navbar-logo {
+            width: 45px;
+            height: 45px;
+            object-fit: contain;
+        }
+
+        .brand-text {
+            color: var(--gold);
+            font-size: 1.2rem;
+            letter-spacing: 0.5px;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(135deg, var(--black) 0%, var(--dark-gray) 100%);
+            padding: 120px 0 60px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><rect width="100" height="100" fill="none"/><path d="M0 0L100 100M100 0L0 100" stroke="rgba(212,175,55,0.05)" stroke-width="1"/></svg>');
+            background-size: 100px 100px;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: var(--light-gold);
+            font-weight: 300;
+        }
+
+        .gold-line {
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--gold), var(--dark-gold));
+            margin: 20px auto;
+        }
+
+        /* Main Content Section */
+        .content-section {
+            padding: 80px 0;
+            background-color: var(--white);
+        }
+
+        .last-updated {
+            background: linear-gradient(135deg, var(--light-gold), #fff);
+            border-left: 4px solid var(--gold);
+            padding: 15px 20px;
+            margin-bottom: 40px;
+            border-radius: 5px;
+            font-size: 0.95rem;
+            color: var(--dark-gray);
+        }
+
+        .section-heading {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--black);
+            margin-top: 40px;
+            margin-bottom: 20px;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .section-heading::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 5px;
+            height: 70%;
+            background: linear-gradient(180deg, var(--gold), var(--dark-gold));
+            border-radius: 10px;
+        }
+
+        .section-subheading {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--dark-gray);
+            margin-top: 30px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-subheading i {
+            color: var(--gold);
+            font-size: 1.2rem;
+        }
+
+        .content-text {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .info-box {
+            background: linear-gradient(135deg, #f8f8f8, #fff);
+            border: 2px solid var(--light-gold);
+            border-radius: 10px;
+            padding: 25px;
+            margin: 30px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .info-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: linear-gradient(180deg, var(--gold), var(--dark-gold));
+        }
+
+        .info-box-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--black);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .info-box-title i {
+            color: var(--gold);
+        }
+
+        .list-styled {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .list-styled li {
+            padding: 12px 0;
+            padding-left: 35px;
+            position: relative;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .list-styled li::before {
+            content: '\f138';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: var(--gold);
+            font-size: 1.1rem;
+        }
+
+        /* Contact Box */
+        .contact-box {
+            background: linear-gradient(135deg, var(--black), var(--dark-gray));
+            color: var(--white);
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            margin: 50px 0;
+            box-shadow: 0 10px 40px rgba(212, 175, 55, 0.3);
+        }
+
+        .contact-box h3 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--gold);
+            margin-bottom: 15px;
+        }
+
+        .contact-box p {
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+            color: var(--light-gold);
+        }
+
+        .contact-methods {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .contact-btn {
+            background: linear-gradient(135deg, var(--gold), var(--dark-gold));
+            color: var(--black);
+            padding: 12px 30px;
+            font-size: 1.05rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .contact-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.5);
+            color: var(--black);
+        }
+
+        .contact-btn.whatsapp {
+            background: linear-gradient(135deg, #25D366, #128C7E);
+        }
+
+        .contact-btn.email {
+            background: linear-gradient(135deg, var(--gold), var(--dark-gold));
+        }
+
+        /* Table of Contents */
+        .toc {
+            background: #f8f8f8;
+            border: 2px solid var(--light-gold);
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 40px;
+            position: sticky;
+            top: 100px;
+        }
+
+        .toc-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--black);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .toc-title i {
+            color: var(--gold);
+        }
+
+        .toc-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .toc-list li {
+            padding: 10px 0;
+        }
+
+        .toc-list a {
+            color: var(--dark-gray);
+            text-decoration: none;
+            font-size: 1.05rem;
+            transition: all 0.3s ease;
+            display: block;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .toc-list a::before {
+            content: '\f0da';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: var(--gold);
+            transition: left 0.3s ease;
+        }
+
+        .toc-list a:hover {
+            color: var(--gold);
+            padding-left: 30px;
+        }
+
+        .toc-list a:hover::before {
+            left: 10px;
+        }
+
+        /* Footer */
+        .footer {
+            background: linear-gradient(135deg, var(--black), var(--dark-gray));
+            color: var(--light-gold);
+            padding: 30px 0;
+            text-align: center;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .section-heading {
+                font-size: 1.6rem;
+            }
+
+            .toc {
+                position: relative;
+                top: 0;
+            }
+
+            .navbar-logo {
+                width: 35px;
+                height: 35px;
+            }
+
+            .brand-text {
+                font-size: 1rem;
+            }
+
+            .contact-methods {
+                flex-direction: column;
+            }
+
+            .contact-btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .contact-box {
+                padding: 30px 20px;
+            }
+        }
+
+        /* Custom styles for enhanced navbar */
+        .navbar {
+            padding: 0.75rem 1rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: transform 0.3s ease;
+        }
+
+        /* .navbar-brand:hover {
+        transform: scale(1.02);
+    } */
+
+        .navbar-logo {
+            width: 45px;
+            height: 45px;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+
+        /* .navbar-logo:hover {
+        transform: rotate(5deg);
+    } */
+
+        .brand-text {
+            color: #fff;
+            font-size: 1.2rem;
+            letter-spacing: 0.5px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .navbar-toggler {
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            padding: 0.5rem 0.75rem;
+            transition: all 0.3s ease;
+        }
+
+        .navbar-toggler:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.5);
+        }
+
+        .navbar-toggler:focus {
+            box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.25);
+        }
+
+        .offcanvas-header {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            border-bottom: 2px solid #444;
+        }
+
+        .offcanvas-title {
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .offcanvas-body {
+            background: linear-gradient(135deg, #212121 0%, #1a1a1a 100%);
+        }
+
+        .nav-link {
+            padding: 0.75rem 1rem;
+            margin: 0.25rem 0;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nav-link:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0;
+            height: 3px;
+            background: linear-gradient(90deg, gold, #c9b520);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover:before {
+            width: 100%;
+        }
+
+        .nav-link:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            transform: translateX(5px);
+            color: gold !important;
+        }
+
+        .nav-link.active {
+            background-color: rgba(167, 146, 40, 0.2);
+            color: gold !important;
+        }
+
+        .nav-link i {
+            margin-right: 8px;
+            width: 20px;
+            text-align: center;
+        }
+
+        .dropdown-menu {
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            border: 1px solid #444;
+        }
+
+        .dropdown-item {
+            padding: 0.75rem 1.25rem;
+            transition: all 0.3s ease;
+        }
+
+        .dropdown-item:hover {
+            background-color: rgba(40, 167, 69, 0.2);
+            color: #28a745 !important;
+            transform: translateX(5px);
+        }
+
+        .search-form {
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .search-form .form-control {
+            border-radius: 25px;
+            padding: 0.6rem 1.2rem;
+            border: 2px solid gold;
+            background-color: rgba(255, 255, 255, 0.05);
+            color: #fff;
+            transition: all 0.3s ease;
+        }
+
+        .search-form .form-control:focus {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-color: gold;
+            box-shadow: 0 0 0 0.25rem rgba(40, 167, 69, 0.25);
+            color: #fff;
+        }
+
+        .search-form .form-control::placeholder {
+            color: rgba(188, 185, 11, 0.6);
+        }
+
+        .search-form .btn {
+            border-radius: 25px;
+            padding: 0.6rem 1.5rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .search-form .btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgb(228, 201, 51);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 576px) {
+            .brand-text {
+                font-size: 1rem;
+            }
+
+            .navbar-logo {
+                width: 35px;
+                height: 35px;
+            }
+
+            .navbar {
+                padding: 0.5rem 0.75rem;
+            }
+        }
+
+        @media (max-width: 380px) {
+            .brand-text {
+                font-size: 0.9rem;
+            }
+
+            .navbar-logo {
+                width: 30px;
+                height: 30px;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .navbar-logo {
+                width: 80px;
+                height: 80px;
+            }
+        }
+
+        .navbar {
+            padding: 0.75rem 1rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: transform 0.3s ease;
+        }
+
+        /* .navbar-brand:hover {
+        transform: scale(1.02);
+    } */
+
+        .navbar-logo {
+            width: 45px;
+            height: 45px;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+
+        /* .navbar-logo:hover {
+        transform: rotate(5deg);
+    } */
+
+        .brand-text {
+            color: #fff;
+            font-size: 1.2rem;
+            letter-spacing: 0.5px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .navbar-toggler {
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            padding: 0.5rem 0.75rem;
+            transition: all 0.3s ease;
+        }
+
+        .navbar-toggler:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.5);
+        }
+
+        .navbar-toggler:focus {
+            box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.25);
+        }
+
+        .offcanvas-header {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            border-bottom: 2px solid #444;
+        }
+
+        .offcanvas-title {
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .offcanvas-body {
+            background: linear-gradient(135deg, #212121 0%, #1a1a1a 100%);
+        }
+
+        .nav-link {
+            padding: 0.75rem 1rem;
+            margin: 0.25rem 0;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nav-link:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0;
+            height: 3px;
+            background: linear-gradient(90deg, gold, #c9b520);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover:before {
+            width: 100%;
+        }
+
+        .nav-link:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            transform: translateX(5px);
+            color: gold !important;
+        }
+
+        .nav-link.active {
+            background-color: rgba(167, 146, 40, 0.2);
+            color: gold !important;
+        }
+
+        .nav-link i {
+            margin-right: 8px;
+            width: 20px;
+            text-align: center;
+        }
+
+        /* .dropdown-menu {
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        border: 1px solid #444;
+    }
+
+    .dropdown-item {
+        padding: 0.75rem 1.25rem;
+        transition: all 0.3s ease;
+    }
+
+    .dropdown-item:hover {
+        background-color: rgba(40, 167, 69, 0.2);
+        color: #28a745 !important;
+        transform: translateX(5px);
+    }
+
+    .search-form {
+        margin-top: 2rem;
+        padding-top: 1.5rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .search-form .form-control {
+        border-radius: 25px;
+        padding: 0.6rem 1.2rem;
+        border: 2px solid gold;
+        background-color: rgba(255, 255, 255, 0.05);
+        color: #fff;
+        transition: all 0.3s ease;
+    }
+
+    .search-form .form-control:focus {
+        background-color: rgba(255, 255, 255, 0.1);
+        border-color: gold;
+        box-shadow: 0 0 0 0.25rem rgba(40, 167, 69, 0.25);
+        color: #fff;
+    }
+
+    .search-form .form-control::placeholder {
+        color: rgba(188, 185, 11, 0.6);
+    }
+
+    .search-form .btn {
+        border-radius: 25px;
+        padding: 0.6rem 1.5rem;
+        font-weight: 600;
+        transition: all 0.3s ease;
+    }
+
+    .search-form .btn:hover {
+        transform: scale(1.05);
+        box-shadow: 0 5px 15px rgb(228, 201, 51);
+    } */
+
+        /* Responsive adjustments */
+        @media (max-width: 576px) {
+            .brand-text {
+                font-size: 1rem;
+            }
+
+            .navbar-logo {
+                width: 35px;
+                height: 35px;
+            }
+
+            .navbar {
+                padding: 0.5rem 0.75rem;
+            }
+        }
+
+        @media (max-width: 380px) {
+            .brand-text {
+                font-size: 0.9rem;
+            }
+
+            .navbar-logo {
+                width: 30px;
+                height: 30px;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .navbar-logo {
+                width: 100px;
+                height: 80px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-dark fixed-top" style="background-color: black;">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">
+                <img src="logo.png" alt="Bala ji Property Hub logo" class="navbar-logo">
+                <span class="brand-text" style="color: goldenrod; "><b>BALA JI PROPERTY HUB </b></span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar"
+                aria-labelledby="offcanvasDarkNavbarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">
+                        <i class="fas fa-building me-2"></i>Bala Ji Property Hub
+                    </h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+                        aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="index.html">
+                                <i class="fas fa-home"></i>Home
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">
+                                <i class="fas fa-info-circle"></i>About
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">
+                                <i class="fas fa-envelope"></i>Contact
+                            </a>
+                        </li>
+                        <!-- <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                <i class="fas fa-th"></i>Services
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-dark">
+                                <li><a class="dropdown-item" href="#"><i class="fas fa-home me-2"></i>Residential
+                                        Properties</a></li>
+                                <li><a class="dropdown-item" href="#"><i class="fas fa-building me-2"></i>Commercial
+                                        Properties</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#"><i class="fas fa-handshake me-2"></i>Property
+                                        Consultancy</a></li>
+                            </ul>
+                        </li> -->
+                    </ul>
+                    <!-- <form class="d-flex search-form" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Search properties..."
+                            aria-label="Search" />
+                        <button class="btn btn-success" type="submit">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </form> -->
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-content text-center">
+                <h1 class="hero-title">Privacy Policy</h1>
+                <div class="gold-line"></div>
+                <p class="hero-subtitle">Your Privacy is Our Priority</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="content-section">
+        <div class="container">
+            <div class="row">
+                <!-- Table of Contents -->
+                <div class="col-lg-4 mb-4">
+                    <div class="toc">
+                        <h3 class="toc-title">
+                            <i class="fas fa-list"></i>
+                            Quick Navigation
+                        </h3>
+                        <ul class="toc-list">
+                            <li><a href="#introduction">Introduction</a></li>
+                            <li><a href="#information-collection">Information We Collect</a></li>
+                            <li><a href="#information-use">How We Use Information</a></li>
+                            <!-- <li><a href="#no-database">No Database Storage</a></li> -->
+                            <li><a href="#third-party">Third-Party Services</a></li>
+                            <li><a href="#cookies">Website Analytics</a></li>
+                            <li><a href="#your-rights">Your Rights</a></li>
+                            <li><a href="#contact">Contact Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Content -->
+                <div class="col-lg-8">
+                    <!-- <div class="last-updated">
+                        <i class="fas fa-calendar-alt me-2"></i>
+                        <strong>Last Updated:</strong> October 12, 2025
+                    </div> -->
+
+                    <!-- Introduction -->
+                    <div id="introduction">
+                        <h2 class="section-heading">Introduction</h2>
+                        <p class="content-text">
+                            Welcome to Bala Ji Property Hub. We are committed to protecting your privacy and being
+                            transparent about how we handle your information.
+                            As a static website, we operate differently from typical database-driven platforms.
+                        </p>
+                        <p class="content-text">
+                            This Privacy Policy explains our practices regarding information collection and use when you
+                            visit our website or contact us
+                            through email or WhatsApp. By using our services, you agree to the practices described in
+                            this policy.
+                        </p>
+
+                        <div class="info-box">
+                            <h4 class="info-box-title">
+                                <i class="fas fa-shield-alt"></i>
+                                Important Note
+                            </h4>
+                            <p class="content-text mb-0">
+                                <strong>We do not store any personal information on our website servers or in any
+                                    database.</strong> All communication
+                                happens directly through email and WhatsApp, and your information is only stored in
+                                those respective platforms according
+                                to their privacy policies.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Information Collection -->
+                    <!-- <div id="information-collection">
+                        <h2 class="section-heading">Information We Collect</h2>
+
+                        <h3 class="section-subheading">
+                            <i class="fas fa-envelope"></i>
+                            Information You Provide Directly
+                        </h3>
+                        <p class="content-text">
+                            When you contact us via email or WhatsApp, you voluntarily provide us with information such
+                            as:
+                        </p>
+                        <ul class="list-styled">
+                            <li>Your name and contact details (phone number, email address)</li>
+                            <li>Property preferences and requirements</li>
+                            <li>Budget and timeline information</li>
+                            <li>Location preferences</li>
+                            <li>Any other information you choose to share in your messages</li>
+                        </ul>
+
+                        <p class="content-text">
+                            <strong>This information is communicated directly through:</strong>
+                        </p>
+                        <ul class="list-styled">
+                            <li>Email messages to our business email address</li>
+                            <li>WhatsApp messages to our business WhatsApp number</li>
+                            <li>Phone calls to our listed contact numbers</li>
+                        </ul>
+
+                        <h3 class="section-subheading">
+                            <i class="fas fa-chart-line"></i>
+                            Website Usage Information
+                        </h3>
+                        <p class="content-text">
+                            When you visit our website, we may automatically collect basic technical information through
+                            standard web analytics tools:
+                        </p>
+                        <ul class="list-styled">
+                            <li>Pages you visit on our website</li>
+                            <li>Time spent on pages</li>
+                            <li>Browser type and device information</li>
+                            <li>Approximate geographic location (city/country level)</li>
+                            <li>Referring website addresses</li>
+                        </ul>
+                        <p class="content-text">
+                            This information is collected anonymously and used only to improve our website experience.
+                        </p>
+                    </div> -->
+
+                    <!-- Information Use -->
+                    <div id="information-use">
+                        <h2 class="section-heading">How We Use Your Information</h2>
+                        <p class="content-text">
+                            The information you provide through email or WhatsApp is used solely for:
+                        </p>
+                        <ul class="list-styled">
+                            <li>Responding to your property inquiries</li>
+                            <li>Providing information about available properties</li>
+                            <li>Scheduling property viewings and consultations</li>
+                            <li>Processing property transactions and documentation</li>
+                            <li>Sending property updates and listings (only if you request them)</li>
+                            <li>Maintaining ongoing communication about your property needs</li>
+                        </ul>
+
+                        <div class="info-box">
+                            <h4 class="info-box-title">
+                                <i class="fas fa-ban"></i>
+                                What We Don't Do
+                            </h4>
+                            <ul class="list-styled mb-0">
+                                <li>We do NOT sell, rent, or share your contact information with third parties</li>
+                                <li>We do NOT send unsolicited marketing emails or WhatsApp messages</li>
+                                <li>We do NOT store your information in any online database</li>
+                                <li>We do NOT use automated systems to process your data</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- No Database -->
+                    <div id="no-database">
+                        <h2 class="section-heading">No Database Storage Policy</h2>
+                        <p class="content-text">
+                            <strong>Bala Ji Property Hub operates as a static website.</strong> This means:
+                        </p>
+                        <ul class="list-styled">
+                            <li>We do not have user registration or login systems</li>
+                            <li>We do not store personal information on our web servers</li>
+                            <li>We do not maintain any customer database</li>
+                            <li>All client communication is handled through direct channels (email/WhatsApp)</li>
+                        </ul>
+
+                        <p class="content-text">
+                            Your information is stored only in:
+                        </p>
+                        <ul class="list-styled">
+                            <li><strong>Email:</strong> Stored in our email service provider's system (subject to their
+                                privacy policy)</li>
+                            <li><strong>WhatsApp:</strong> Stored in WhatsApp's system (subject to WhatsApp's privacy
+                                policy)</li>
+                            <li><strong>Local Records:</strong> Physical or digital records maintained by our team for
+                                business purposes</li>
+                        </ul>
+                    </div>
+
+                    <!-- Third-Party Services -->
+                    <div id="third-party">
+                        <h2 class="section-heading">Third-Party Services</h2>
+
+                        <h3 class="section-subheading">
+                            <i class="fab fa-whatsapp"></i>
+                            WhatsApp
+                        </h3>
+                        <p class="content-text">
+                            When you contact us via WhatsApp, your messages and shared information are subject to
+                            WhatsApp's Terms of Service
+                            and Privacy Policy. WhatsApp uses end-to-end encryption for all messages.
+                        </p>
+
+                        <h3 class="section-subheading">
+                            <i class="fas fa-envelope"></i>
+                            Email Services
+                        </h3>
+                        <p class="content-text">
+                            Email communications are handled through our email service provider. Your email address and
+                            message content are
+                            subject to the privacy policy of the email service provider we use.
+                        </p>
+
+                        <h3 class="section-subheading">
+                            <i class="fas fa-chart-bar"></i>
+                            Analytics Tools
+                        </h3>
+                        <p class="content-text">
+                            We may use web analytics services to understand how visitors use our website. These services
+                            collect anonymous
+                            data and do not identify individual users.
+                        </p>
+                    </div>
+
+                    <!-- Cookies -->
+                    <div id="cookies">
+                        <h2 class="section-heading">Website Analytics and Cookies</h2>
+                        <p class="content-text">
+                            Our website may use minimal cookies or similar technologies for:
+                        </p>
+                        <ul class="list-styled">
+                            <li>Basic website functionality</li>
+                            <li>Understanding visitor traffic patterns (anonymously)</li>
+                            <li>Improving user experience</li>
+                        </ul>
+                        <p class="content-text">
+                            These cookies do not collect personal information and cannot identify you individually. You
+                            can disable cookies
+                            in your browser settings, though this may affect some website functionality.
+                        </p>
+                    </div>
+
+                    <!-- Your Rights -->
+                    <div id="your-rights">
+                        <h2 class="section-heading">Your Privacy Rights</h2>
+                        <p class="content-text">
+                            You have the following rights regarding your information:
+                        </p>
+
+                        <div class="info-box">
+                            <h4 class="info-box-title">
+                                <i class="fas fa-user-shield"></i>
+                                Your Rights Include
+                            </h4>
+                            <ul class="list-styled">
+                                <li><strong>Right to Access:</strong> Request to know what information we have about you
+                                </li>
+                                <li><strong>Right to Correction:</strong> Request updates to any incorrect information
+                                </li>
+                                <li><strong>Right to Deletion:</strong> Request deletion of your information from our
+                                    records</li>
+                                <li><strong>Right to Opt-Out:</strong> Unsubscribe from any communications at any time
+                                </li>
+                                <li><strong>Right to Object:</strong> Object to any use of your information</li>
+                            </ul>
+                        </div>
+
+                        <p class="content-text">
+                            To exercise any of these rights, simply contact us via email or WhatsApp using the
+                            information below.
+                            We will respond promptly to your request.
+                        </p>
+
+                        <h3 class="section-subheading">
+                            <i class="fas fa-trash-alt"></i>
+                            How to Delete Your Information
+                        </h3>
+                        <p class="content-text">
+                            If you wish to delete your information:
+                        </p>
+                        <ul class="list-styled">
+                            <li>Send us an email or WhatsApp message requesting deletion</li>
+                            <li>We will delete your information from our email threads and local records</li>
+                            <li>Note: Backup emails in email servers may take longer to be permanently deleted</li>
+                            <li>WhatsApp messages can be deleted from both sides upon request</li>
+                        </ul>
+                    </div>
+
+                    <!-- Data Security -->
+                    <div id="data-security">
+                        <h2 class="section-heading">Data Security</h2>
+                        <p class="content-text">
+                            While we don't store data on our website servers, we take the security of your
+                            communications seriously:
+                        </p>
+                        <ul class="list-styled">
+                            <li>Email communications are protected by our email provider's security measures</li>
+                            <li>WhatsApp messages are end-to-end encrypted</li>
+                            <li>We use secure connections (HTTPS) for our website</li>
+                            <li>Our team is trained to handle client information confidentially</li>
+                            <li>Physical records are stored securely</li>
+                        </ul>
+                    </div>
+
+                    <!-- Contact -->
+                    <div id="contact">
+                        <div class="contact-box">
+                            <h3>
+                                <i class="fas fa-question-circle me-2"></i>
+                                Questions About Your Privacy?
+                            </h3>
+                            <p>
+                                If you have any questions about this Privacy Policy or how we handle your information,
+                                please contact us directly through:
+                            </p>
+                            <div class="contact-methods">
+                                <a href="https://wa.me/1234567890" class="contact-btn whatsapp" target="_blank">
+                                    <i class="fab fa-whatsapp"></i>WhatsApp Us
+                                </a>
+                                <a href="mailto:info@balajipropertyhub.com" class="contact-btn email">
+                                    <i class="fas fa-envelope"></i>Email Us
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Additional Information -->
+                    <div class="mt-5">
+                        <h2 class="section-heading">Updates to This Policy</h2>
+                        <p class="content-text">
+                            We may update this Privacy Policy from time to time to reflect changes in our practices or
+                            for legal reasons.
+                            We will post any updates on this page with a new "Last Updated" date.
+                        </p>
+                        <p class="content-text">
+                            We encourage you to review this Privacy Policy periodically. Continued use of our services
+                            after changes
+                            constitutes acceptance of the updated policy.
+                        </p>
+                    </div>
+
+                    <div class="mt-4">
+                        <h2 class="section-heading">Consent</h2>
+                        <p class="content-text">
+                            By contacting us via email or WhatsApp, you consent to the collection and use of your
+                            information as described
+                            in this Privacy Policy. You may withdraw your consent at any time by contacting us.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Bala Ji Property Hub. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Smooth scroll for table of contents links
+        document.querySelectorAll('.toc-list a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

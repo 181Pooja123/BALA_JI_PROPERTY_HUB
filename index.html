@@ -1,0 +1,2290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body,
+    html {
+        width: 100%;
+        height: 100%;
+        overflow-x: hidden;
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    .video-container {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        overflow: hidden;
+    }
+
+    video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    /* Optional overlay for readability */
+    .video-container::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.3);
+        z-index: 1;
+    }
+
+    .welcome {
+        position: absolute;
+        z-index: 2;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+        font-size: 4rem;
+        font-weight: 700;
+        text-align: center;
+        text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+        /* padding: 0 ; */
+    }
+
+    /* Responsive text size */
+    @media (max-width: 768px) {
+        .overlay-text {
+            font-size: 2rem;
+        }
+
+    }
+
+    @media (max-width: 480px) {
+        .overlay-text {
+            font-size: 1.5rem;
+            width: 100%;
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            height: 50%;
+            overflow: hidden;
+        }
+    }
+
+    @media (min-width: 1025px) {
+
+        .overlay-text h1 {
+            font-size: 5rem;
+            width: 100%;
+        }
+    }
+
+    .btn-explore {
+        background: linear-gradient(45deg, #ffcc00, #ff9900);
+        color: #000;
+        font-weight: 700;
+        font-size: 1.2rem;
+        padding: 12px 40px;
+        border: none;
+        border-radius: 50px;
+        box-shadow: 0 0 20px rgba(255, 204, 0, 0.5);
+        transition: all 0.4s ease;
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
+    }
+
+    /* Glow and movement on hover */
+    .btn-explore::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+        transition: all 0.5s ease;
+    }
+
+    .btn-explore:hover::before {
+        left: 100%;
+    }
+
+    .btn-explore:hover {
+        transform: scale(1.08);
+        box-shadow: 0 0 25px rgba(255, 204, 0, 0.8);
+        background: linear-gradient(45deg, #ffe066, #ffbb00);
+        color: #000;
+    }
+
+    .btn-explore:active {
+        transform: scale(0.96);
+    }
+
+    /* Small devices */
+    @media (max-width: 768px) {
+        .btn-explore {
+            font-size: 1rem;
+            padding: 10px 30px;
+        }
+    }
+
+    .card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border-radius: 12px;
+        overflow: hidden;
+        cursor: pointer;
+        background-color: #fff;
+    }
+
+    .card:hover {
+        transform: translateY(-10px) scale(1.03);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+    }
+
+    /* ✅ Better responsiveness for small devices */
+    @media (max-width: 576px) {
+        .card {
+            border-radius: 12px;
+            font-size: 0.9rem;
+        }
+
+        .card-img-top {
+            height: 150px !important;
+            object-fit: cover;
+        }
+
+        .card-body {
+            padding: 10px;
+        }
+
+        .card-title {
+            font-size: 1rem;
+        }
+
+        .card-text {
+            font-size: 0.85rem;
+        }
+    }
+
+    /* ✅ Smooth hover effect for professionalism */
+    .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        transition: all 0.3s ease-in-out;
+    }
+
+    /* Custom styles for enhanced navbar */
+    .navbar {
+        padding: 0.75rem 1rem;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        transition: all 0.3s ease;
+    }
+
+    .navbar-brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-weight: 600;
+        font-size: 1.1rem;
+        transition: transform 0.3s ease;
+    }
+
+    /* .navbar-brand:hover {
+        transform: scale(1.02);
+    } */
+
+    .navbar-logo {
+        width: 45px;
+        height: 45px;
+        object-fit: contain;
+        transition: transform 0.3s ease;
+    }
+
+    /* .navbar-logo:hover {
+        transform: rotate(5deg);
+    } */
+
+    .brand-text {
+        color: #fff;
+        font-size: 1.2rem;
+        letter-spacing: 0.5px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .navbar-toggler {
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        padding: 0.5rem 0.75rem;
+        transition: all 0.3s ease;
+    }
+
+    .navbar-toggler:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+        border-color: rgba(255, 255, 255, 0.5);
+    }
+
+    .navbar-toggler:focus {
+        box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.25);
+    }
+
+    .offcanvas-header {
+        background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+        border-bottom: 2px solid #444;
+    }
+
+    .offcanvas-title {
+        font-weight: 700;
+        letter-spacing: 1px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    .offcanvas-body {
+        background: linear-gradient(135deg, #212121 0%, #1a1a1a 100%);
+    }
+
+    .nav-link {
+        padding: 0.75rem 1rem;
+        margin: 0.25rem 0;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .nav-link:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 0;
+        height: 3px;
+        background: linear-gradient(90deg, gold, #c9b520);
+        transition: width 0.3s ease;
+    }
+
+    .nav-link:hover:before {
+        width: 100%;
+    }
+
+    .nav-link:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+        transform: translateX(5px);
+        color: gold !important;
+    }
+
+    .nav-link.active {
+        background-color: rgba(167, 146, 40, 0.2);
+        color: gold !important;
+    }
+
+    .nav-link i {
+        margin-right: 8px;
+        width: 20px;
+        text-align: center;
+    }
+
+    /* .dropdown-menu {
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        border: 1px solid #444;
+    }
+
+    .dropdown-item {
+        padding: 0.75rem 1.25rem;
+        transition: all 0.3s ease;
+    }
+
+    .dropdown-item:hover {
+        background-color: rgba(40, 167, 69, 0.2);
+        color: #28a745 !important;
+        transform: translateX(5px);
+    }
+
+    .search-form {
+        margin-top: 2rem;
+        padding-top: 1.5rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .search-form .form-control {
+        border-radius: 25px;
+        padding: 0.6rem 1.2rem;
+        border: 2px solid gold;
+        background-color: rgba(255, 255, 255, 0.05);
+        color: #fff;
+        transition: all 0.3s ease;
+    }
+
+    .search-form .form-control:focus {
+        background-color: rgba(255, 255, 255, 0.1);
+        border-color: gold;
+        box-shadow: 0 0 0 0.25rem rgba(40, 167, 69, 0.25);
+        color: #fff;
+    }
+
+    .search-form .form-control::placeholder {
+        color: rgba(188, 185, 11, 0.6);
+    }
+
+    .search-form .btn {
+        border-radius: 25px;
+        padding: 0.6rem 1.5rem;
+        font-weight: 600;
+        transition: all 0.3s ease;
+    }
+
+    .search-form .btn:hover {
+        transform: scale(1.05);
+        box-shadow: 0 5px 15px rgb(228, 201, 51);
+    } */
+
+    /* Responsive adjustments */
+    @media (max-width: 576px) {
+        .brand-text {
+            font-size: 1rem;
+        }
+
+        .navbar-logo {
+            width: 35px;
+            height: 35px;
+        }
+
+        .navbar {
+            padding: 0.5rem 0.75rem;
+        }
+    }
+
+    @media (max-width: 380px) {
+        .brand-text {
+            font-size: 0.9rem;
+        }
+
+        .navbar-logo {
+            width: 30px;
+            height: 30px;
+        }
+    }
+
+    @media (min-width: 992px) {
+        .navbar-logo {
+            width: 100px;
+            height: 80px;
+        }
+    }
+</style>
+
+<body>
+    <nav class="navbar navbar-dark fixed-top" style="background-color: black;">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">
+                <img src="logo.png" alt="Bala ji Property Hub logo" class="navbar-logo">
+                <span class="brand-text" style="color: goldenrod; "><b>BALA JI PROPERTY HUB </b></span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar"
+                aria-labelledby="offcanvasDarkNavbarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">
+                        <i class="fas fa-building me-2"></i>Bala Ji Property Hub
+                    </h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+                        aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="index.html">
+                                <i class="fas fa-home"></i>Home
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">
+                                <i class="fas fa-info-circle"></i>About
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">
+                                <i class="fas fa-envelope"></i>Contact
+                            </a>
+                        </li>
+                        <!-- <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                <i class="fas fa-th"></i>Services
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-dark">
+                                <li><a class="dropdown-item" href="#"><i class="fas fa-home me-2"></i>Residential
+                                        Properties</a></li>
+                                <li><a class="dropdown-item" href="#"><i class="fas fa-building me-2"></i>Commercial
+                                        Properties</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#"><i class="fas fa-handshake me-2"></i>Property
+                                        Consultancy</a></li>
+                            </ul>
+                        </li> -->
+                    </ul>
+                    <!-- <form class="d-flex search-form" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Search properties..."
+                            aria-label="Search" />
+                        <button class="btn btn-success" type="submit">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </form> -->
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Spacer to prevent content from going under fixed navbar -->
+    <div style="height: 80px;"></div>
+
+    <div class="video-container">
+        <video id="welcomeVideo" autoplay muted loop playsinline>
+            <!-- Desktop -->
+            <source src="welcome video.mp4" type="video/mp4" media="(min-width: 1025px)">
+            <!-- Tablet -->
+            <source src="welcome-tablet.mp4" type="video/mp4" media="(min-width: 601px) and (max-width: 1024px)">
+            <!-- Mobile -->
+            <source src="welcome-mobile.mp4" type="video/mp4" media="(max-width: 600px)">
+            Your browser does not support the video tag.
+        </video>
+
+        <div class="overlay-text welcome ">
+            <h1>Welcome to BALA Ji Property Hub</h1>
+            <div class="d-grid gap-2 col-6 mx-auto">
+                <a href="#projects"><button class="btn-explore" type="button">Explore Now</button></a>
+            </div>
+        </div>
+    </div>
+    <div class="features">
+        <div class="Features container mt-5">
+            <h1 class="mb-4" style="text-align: center; color: white; margin-top: -10px;">Why Choose Bala Ji Property
+                Hub?</h1>
+        </div>
+
+        <!-- Feature Cards -->
+        <div class="container mb-5 cards" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500">
+            <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+            <script>
+                AOS.init();
+            </script>
+
+            <div class="row row-cols-2 row-cols-md-2 row-cols-lg-4 g-4">
+
+                <div class="col info">
+                    <div class="card image-card">
+                        <img src="f1.webp" class="card-img" alt="verified listings">
+                        <div class="card-content">
+                            <h5 class="card-text-overlay">100% Legal & Verified</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col info">
+                    <div class="card image-card">
+                        <img src="f2.avif" class="card-img" alt="prime location">
+                        <div class="card-content">
+                            <h5 class="card-text-overlay">Best Price Guarantee</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col info">
+                    <div class="card image-card">
+                        <img src="f3.avif" class="card-img" alt="Expert Guidance">
+                        <div class="card-content">
+                            <h5 class="card-text-overlay">Expert Market Knowledge</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col info">
+                    <div class="card image-card">
+                        <img src="f4.avif" class="card-img" alt="Best Deals">
+                        <div class="card-content">
+                            <h5 class="card-text-overlay">Post-Sale Support</h5>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <style>
+        .features {
+            background: radial-gradient(circle at top left, black 0%, rgb(0, 0, 0) 40%, #000000 65%, black 80%, #b8860b 120%);
+            padding: 80px 20px;
+            border-radius: 20px;
+            box-shadow: inset 0 0 80px rgba(0, 0, 0, 0.6);
+            position: relative;
+            overflow: hidden;
+            margin-top: 30px;
+            margin-left: 10px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+
+        /* ✨ Floating light effects (soft gradients for cinematic look) */
+        .features::before,
+        .features::after {
+            content: "";
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            filter: blur(100px);
+            opacity: 0.4;
+            animation: floatLights 10s infinite alternate ease-in-out;
+        }
+
+        .features::before {
+            background: #000000;
+            top: -50px;
+            left: -50px;
+        }
+
+        .features::after {
+            background: #f7797d;
+            bottom: -50px;
+            right: -50px;
+        }
+
+        .image-card:hover .card-img {
+            opacity: 0.6;
+            transform: scale(1.08);
+        }
+
+        .image-card:hover .card-text-overlay {
+            transform: translateY(-50%);
+            margin-bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+        }
+
+        /* 📱 Responsive */
+        @media (max-width: 576px) {
+            .features {
+                padding: 50px 10px;
+            }
+
+            .image-card .card-img {
+                height: 180px;
+            }
+
+            .image-card .card-text-overlay {
+                font-size: 0.9rem;
+                padding: 6px 10px;
+            }
+        }
+
+
+        /* ✅ Card container */
+        .image-card {
+            position: relative;
+            overflow: hidden;
+            border: none;
+            border-radius: 12px;
+            transition: transform 0.3s ease;
+        }
+
+        .image-card:hover {
+            transform: translateY(-5px);
+        }
+
+        /* ✅ Image setup */
+        .image-card .card-img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: opacity 0.4s ease, transform 0.4s ease;
+        }
+
+        /* ✅ Text layer setup */
+        .image-card .card-content {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            background: rgba(0, 0, 0, 0.2);
+            transition: all 0.4s ease;
+        }
+
+        .image-card .card-text-overlay {
+            color: #fff;
+            font-weight: 600;
+            font-size: 1.1rem;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.4);
+            padding: 8px 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            transition: all 0.4s ease;
+        }
+
+        /* ✅ Hover effect */
+        .image-card:hover .card-img {
+            opacity: 0.6;
+            transform: scale(1.05);
+        }
+
+        .image-card:hover .card-text-overlay {
+            transform: translateY(-50%);
+            margin-bottom: 0;
+            background: rgba(0, 0, 0, 0.6);
+        }
+
+        /* ✅ Mobile responsiveness */
+        @media (max-width: 576px) {
+            .image-card .card-img {
+                height: 180px;
+            }
+
+            .image-card .card-text-overlay {
+                font-size: 0.9rem;
+                padding: 6px 10px;
+            }
+        }
+    </style>
+
+    <div class="deals container py-5">
+        <h1 style="text-align: center; color: #d4af37;"><b>Deals In</b></h1>
+        <div class="row align-items-start">
+            <div class="col-12 col-md-4 mb-4 mb-md-0">
+                <div class="d-flex flex-column gap-3 text-center deal-links">
+                    <a class="deal-link active" data-target="apartment">Luxury Apartment</a>
+                    <a class="deal-link" data-target="plot">Residential Plots</a>
+                    <a class="deal-link" data-target="office">Commercial Properties</a>
+                    <a class="deal-link" data-target="under">Under Construction Projects</a>
+                    <a class="deal-link" data-target="resale">Resale Properties</a>
+                    <a class="deal-link" data-target="Invest">Investment Properties for Rental Purposes</a>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-8">
+                <div class="deal-images position-relative">
+                    <div class="deal-image active" id="apartment">
+                        <img src="APARTMENT.avif" alt="Luxury Apartment">
+                        <div class="overlay">
+                            <h2>Luxury Apartments</h2>
+                            <p>Explore premium apartments with modern amenities and top-tier comfort.</p>
+                        </div>
+                    </div>
+                    <div class="deal-image" id="plot">
+                        <img src="PLOT.avif" alt="Residential Plot">
+                        <div class="overlay">
+                            <h2>Residential Plots</h2>
+                            <p>Own your dream plot in prime NCR locations with excellent connectivity.</p>
+                        </div>
+                    </div>
+                    <div class="deal-image" id="office">
+                        <img src="OFFICES.avif" alt="Commercial Properties">
+                        <div class="overlay">
+                            <h2>Commercial Properties</h2>
+                            <p>Invest in high-return office and retail spaces in business hubs.</p>
+                        </div>
+                    </div>
+                    <div class="deal-image" id="under">
+                        <img src="UNDERCONSTRUCTION.avif" alt="Under Construction Projects">
+                        <div class="overlay">
+                            <h2>Under Construction</h2>
+                            <p>Find under-construction projects with flexible payment options.</p>
+                        </div>
+                    </div>
+                    <div class="deal-image" id="resale">
+                        <img src="RESALE.avif" alt="Resale Properties">
+                        <div class="overlay">
+                            <h2>Resale Properties</h2>
+                            <p>Choose verified resale properties for ready-to-move living.</p>
+                        </div>
+                    </div>
+                    <div class="deal-image" id="Invest">
+                        <img src="INVESTMENT.avif" alt="Resale Properties">
+                        <div class="overlay">
+                            <h2>Investment For Rental</h2>
+                            <p>Choose verified resale properties for ready-to-move living.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <style>
+        .deals {
+            background: linear-gradient(to bottom right, #000000, #0a0a0a, #1a1a1a);
+            border-radius: 20px;
+            padding: 60px 20px;
+            color: white;
+        }
+
+        .deal-links a {
+            cursor: pointer;
+            color: #d4af37;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 10px;
+            border: 2px solid transparent;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .deal-links a:hover,
+        .deal-links a.active {
+            color: #000;
+            background-color: #d4af37;
+            border-color: #d4af37;
+        }
+
+        .deal-images {
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 0 25px rgba(212, 175, 55, 0.3);
+        }
+
+        .deal-image {
+            display: none;
+            position: relative;
+            transition: all 0.5s ease-in-out;
+        }
+
+        .deal-image.active {
+            display: block;
+            animation: fadeIn 0.8s ease-in-out;
+        }
+
+        .deal-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+            transition: all 0.4s ease;
+        }
+
+        .deal-image:hover img {
+            filter: blur(4px) brightness(0.7);
+        }
+
+        .overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) translateY(30px);
+            color: #d4af37;
+            opacity: 0;
+            text-align: center;
+            transition: all 0.4s ease;
+        }
+
+        .deal-image:hover .overlay {
+            opacity: 1;
+            transform: translate(-50%, -50%) translateY(0);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(1.02);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .deal-image {
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.6s ease, visibility 0.6s ease;
+        }
+
+        .deal-image.active {
+            opacity: 1;
+            visibility: visible;
+        }
+    </style>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const links = document.querySelectorAll(".deal-link");
+            const images = document.querySelectorAll(".deal-image");
+
+            links.forEach(link => {
+                link.addEventListener("click", () => {
+                    // Remove previous active classes
+                    links.forEach(l => l.classList.remove("active"));
+                    images.forEach(img => img.classList.remove("active"));
+
+                    // Add active class to clicked link and matching image
+                    link.classList.add("active");
+                    const targetId = link.getAttribute("data-target");
+                    const targetImage = document.getElementById(targetId);
+                    if (targetImage) {
+                        targetImage.classList.add("active");
+                    }
+                });
+            });
+        });
+    </script>
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <div class="container my-5">
+        <h1 style="text-align: center;">TRUSTED BUILDERS & PARTNERS</h1>
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <!-- Slides -->
+                <div class="swiper-slide">
+                    <div class="card" style="height: 250px;">
+                        <img src="adore.jpg" alt="Adore" class="card-img-top" />
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="card" style="height: 250px;">
+                        <img src="amolik.jpg" alt="Amolik" class="card-img-top" />
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="card" style="height: 250px;">
+                        <img src="auric.jpg" alt="Auric" class="card-img-top" />
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="card" style="height: 250px;">
+                        <img src="bptp.jpg" alt="BPTP" class="card-img-top" />
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="card" style="height: 250px;">
+                        <img src="omax.jpg" alt="Omax" class="card-img-top" />
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="card" style="height: 250px;">
+                        <img src="navraj.jpg" alt="Navraj" class="card-img-top" />
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="card" style="height: 250px;">
+                        <img src="rps.jpg" alt="RPS" class="card-img-top" />
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation buttons -->
+            <div class="swiper-button-next" style="color: #d4af37;"></div>
+            <div class="swiper-button-prev" style="color: #d4af37;"></div>
+        </div>
+    </div>
+    <style>
+        .swiper-slide .card {
+            height: auto;
+            /* Let height adjust based on image */
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        .swiper-slide .card img {
+            width: 100%;
+            height: auto;
+            /* Maintain original aspect ratio */
+            object-fit: contain;
+            /* Show entire image without cropping */
+            display: block;
+        }
+    </style>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script>
+        const swi = new Swiper('.mySwiper', {
+            loop: true,
+            autoplay: {
+                delay: 2000,
+                disableOnInteraction: false,
+            },
+            slidesPerView: 1,
+            spaceBetween: 20,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            breakpoints: {
+                768: {
+                    slidesPerView: 2,
+                    spaceBetween: 20,
+                },
+                992: {
+                    slidesPerView: 4,
+                    spaceBetween: 20,
+                },
+            },
+        });
+    </script>
+
+
+    <!-- -------------------------------------------------------projects----------------------------------------------------- -->
+    <div id="projects">
+        <section class="services-carousel-section">
+            <div class="carousel-section-container">
+                <div class="carousel-section-header">
+                    <h2>Latest Prjects</h2>
+                    <p>Discover your next investment with valuable returns</p>
+                </div>
+
+                <div class="carousel-section-wrapper">
+                    <div class="carousel-section-track" id="carouselSectionTrack">
+                        <div class="carousel-section-slide">
+                            <div class="carousel-slide-content">
+                                <img src="avenue.jpg" alt="Service 1" class="carousel-slide-image">
+                            </div>
+                            <div class="carousel-slide-info">
+                                <h3>RPS 12TH AVENUE</h3>
+                                <p>Redefining Commercial Luxury on Delhi–Faridabad Corridor</p>
+                                <a href="12thavenue.html" class="carousel-slide-btn">Get Details</a>
+                            </div>
+                        </div>
+
+                        <div class="carousel-section-slide">
+                            <div class="carousel-slide-content">
+                                <img src="omaxe.jpg" alt="Service 2" class="carousel-slide-image">
+                            </div>
+                            <div class="carousel-slide-info">
+                                <h3>Omaxe World Street</h3>
+                                <p>Faridabad’s Most Talked-About Retail & Lifestyle Destination</p>
+                                <a href="omaxe.html" class="carousel-slide-btn">Get Details</a>
+                            </div>
+                        </div>
+
+                        <div class="carousel-section-slide">
+                            <div class="carousel-slide-content">
+                                <img src="auric.jpeg" alt="Service 3" class="carousel-slide-image">
+                            </div>
+                            <div class="carousel-slide-info">
+                                <h3>Auric Universal Square</h3>
+                                <p>Invest in the Future of Commercial Growth at Auric Universal Square</p>
+                                <a href="auric.html" class="carousel-slide-btn">Get Details</a>
+                            </div>
+                        </div>
+
+                        <div class="carousel-section-slide">
+                            <div class="carousel-slide-content">
+                                <img src="bhumika.jpeg" alt="Service 4" class="carousel-slide-image">
+                            </div>
+                            <div class="carousel-slide-info">
+                                <h3>Bhumika</h3>
+                                <p>Luxury, Location & Lucrative Returns—Know More About Bhumika Project.</p>
+                                <a href="bhumikacommercial.html" class="carousel-slide-btn">Get Details</a>
+                            </div>
+                        </div>
+
+                        <div class="carousel-section-slide">
+                            <div class="carousel-slide-content">
+                                <img src="emerald.jpeg" alt="Service 5" class="carousel-slide-image">
+                            </div>
+                            <div class="carousel-slide-info">
+                                <h3>Emerald group</h3>
+                                <p>Your Gateway to Premium Homes & High-Growth Investments</p>
+                                <a href="emerald.html" class="carousel-slide-btn">Get Details</a>
+                            </div>
+                        </div>
+
+                        <div class="carousel-section-slide">
+                            <div class="carousel-slide-content">
+                                <img src="bhumikaplots.jpg" alt="Service 6" class="carousel-slide-image">
+                            </div>
+                            <div class="carousel-slide-info">
+                                <h3>Bhumika Plots</h3>
+                                <p>Secure Your Future with Premium Plots in the Heart of Faridabad</p>
+                                <a href="bhumikaplots.html" class="carousel-slide-btn">Get Details</a>
+                            </div>
+                        </div>
+                        <div class="carousel-section-slide">
+                            <div class="carousel-slide-content">
+                                <img src="deck.jpg" alt="Service 6" class="carousel-slide-image">
+                            </div>
+                            <div class="carousel-slide-info">
+                                <h3>Bptp Deck</h3>
+                                <p>Ultra-Luxury Duplex Apartments</p>
+                                <a href="bptpdeck.html" class="carousel-slide-btn">Get Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-section-indicators" id="carouselSectionIndicators"></div>
+            </div>
+        </section>
+
+        <!-- Carousel CSS - Add this to your stylesheet or in a <style> tag -->
+        <style>
+            * {
+                box-sizing: border-box;
+            }
+
+            .services-carousel-section {
+                padding: 60px 20px;
+                background: #0a0a0a;
+                width: 100%;
+            }
+
+            .carousel-section-container {
+                max-width: 1400px;
+                margin: 0 auto;
+                background: #1a1a1a;
+                border-radius: 20px;
+                padding: 40px;
+                box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+                border: 1px solid #ffd700;
+                width: 100%;
+            }
+
+            .carousel-section-header {
+                text-align: center;
+                margin-bottom: 40px;
+            }
+
+            .carousel-section-header h2 {
+                font-size: clamp(1.8em, 4vw, 2.5em);
+                background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+                margin-bottom: 10px;
+            }
+
+            .carousel-section-header p {
+                color: #aaa;
+                font-size: clamp(0.9em, 2.5vw, 1.1em);
+            }
+
+            .carousel-section-wrapper {
+                position: relative;
+                overflow: hidden;
+                border-radius: 15px;
+                width: 100%;
+            }
+
+            .carousel-section-track {
+                display: flex;
+                transition: transform 0.6s ease-in-out;
+                width: 100%;
+            }
+
+            .carousel-section-slide {
+                flex: 0 0 50%;
+                max-width: 50%;
+                padding: 0 15px;
+            }
+
+            .carousel-slide-content {
+                position: relative;
+                border-radius: 15px;
+                overflow: hidden;
+                width: 100%;
+                padding-top: 75%;
+                background: #000;
+                border: 2px solid #333;
+                transition: all 0.3s ease;
+            }
+
+            .carousel-slide-content::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                height: 4px;
+                background: linear-gradient(90deg, #ffd700, #ffed4e);
+                z-index: 2;
+            }
+
+            .carousel-slide-content:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 30px rgba(255, 215, 0, 0.4);
+                border-color: #ffd700;
+            }
+
+            .carousel-slide-image {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: center;
+                transition: transform 0.5s ease;
+            }
+
+            .carousel-slide-content:hover .carousel-slide-image {
+                transform: scale(1.05);
+            }
+
+            .carousel-slide-info {
+                padding: 20px 15px;
+                background: transparent;
+            }
+
+            .carousel-slide-info h3 {
+                color: #ffd700;
+                font-size: clamp(1.2em, 2.5vw, 1.6em);
+                margin-bottom: 8px;
+                font-weight: 600;
+            }
+
+            .carousel-slide-info p {
+                color: #fff;
+                line-height: 1.6;
+                font-size: clamp(0.9em, 2vw, 1em);
+                margin: 0 0 15px 0;
+            }
+
+            .carousel-slide-btn {
+                display: inline-block;
+                background: linear-gradient(135deg, #ffd700, #ffed4e);
+                color: #000;
+                padding: 12px 28px;
+                border-radius: 25px;
+                text-decoration: none;
+                font-weight: 600;
+                font-size: clamp(0.85em, 2vw, 0.95em);
+                transition: all 0.3s ease;
+                border: 2px solid #ffd700;
+                cursor: pointer;
+            }
+
+            .carousel-slide-btn:hover {
+                background: transparent;
+                color: #ffd700;
+                transform: translateX(5px);
+                box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4);
+            }
+
+            .carousel-section-indicators {
+                display: flex;
+                justify-content: center;
+                gap: 10px;
+                margin-top: 30px;
+            }
+
+            .carousel-section-indicator {
+                width: 12px;
+                height: 12px;
+                border-radius: 50%;
+                background: #444;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                border: 2px solid transparent;
+            }
+
+            .carousel-section-indicator.active {
+                background: linear-gradient(135deg, #ffd700, #ffed4e);
+                transform: scale(1.3);
+                border-color: #ffd700;
+            }
+
+            .carousel-section-indicator:hover {
+                background: #ffd700;
+            }
+
+            /* Mobile view - 1 slide at a time */
+            @media (max-width: 768px) {
+                .services-carousel-section {
+                    padding: 40px 10px;
+                }
+
+                .carousel-section-container {
+                    padding: 25px 20px;
+                }
+
+                .carousel-section-slide {
+                    flex: 0 0 100%;
+                    max-width: 100%;
+                    padding: 0 10px;
+                }
+
+                .carousel-slide-content {
+                    padding-top: 75%;
+                }
+
+                .carousel-slide-info {
+                    padding: 15px 10px;
+                }
+
+                .carousel-slide-btn {
+                    padding: 10px 22px;
+                }
+            }
+
+            @media (max-width: 480px) {
+                .services-carousel-section {
+                    padding: 30px 10px;
+                }
+
+                .carousel-section-container {
+                    padding: 20px 15px;
+                }
+
+                .carousel-section-header {
+                    margin-bottom: 25px;
+                }
+
+                .carousel-section-slide {
+                    padding: 0 5px;
+                }
+
+                .carousel-slide-content {
+                    padding-top: 75%;
+                }
+
+                .carousel-slide-info {
+                    padding: 15px 10px;
+                }
+
+                .carousel-slide-btn {
+                    padding: 10px 20px;
+                    font-size: 0.85em;
+                    display: block;
+                    text-align: center;
+                }
+            }
+        </style>
+        <script>
+            (function () {
+                const track = document.getElementById('carouselSectionTrack');
+                const indicatorsContainer = document.getElementById('carouselSectionIndicators');
+                const slides = document.querySelectorAll('.carousel-section-slide');
+                const totalSlides = slides.length;
+
+                let currentIndex = 0;
+                let autoPlayInterval;
+
+                // Get how many slides are visible at once
+                function getSlidesPerView() {
+                    return window.innerWidth > 768 ? 2 : 1;
+                }
+
+                // Get total number of positions/pages
+                // Desktop: 6 slides, 2 visible = 5 positions (0-4)
+                // Mobile: 6 slides, 1 visible = 6 positions (0-5)
+                function getTotalPositions() {
+                    const slidesPerView = getSlidesPerView();
+                    return totalSlides - slidesPerView + 1;
+                }
+
+                // Create indicator dots
+                function createIndicators() {
+                    indicatorsContainer.innerHTML = '';
+                    const totalPositions = getTotalPositions();
+
+                    for (let i = 0; i < totalPositions; i++) {
+                        const indicator = document.createElement('div');
+                        indicator.classList.add('carousel-section-indicator');
+                        if (i === 0) indicator.classList.add('active');
+                        indicator.addEventListener('click', () => goToSlide(i));
+                        indicatorsContainer.appendChild(indicator);
+                    }
+                }
+
+                // Update carousel position
+                function updateCarousel() {
+                    const slidesPerView = getSlidesPerView();
+                    const slideWidth = slides[0].offsetWidth;
+
+                    // Move by exact pixel width
+                    const offset = -currentIndex * slideWidth;
+                    track.style.transform = `translateX(${offset}px)`;
+
+                    // Update active indicator
+                    const indicators = document.querySelectorAll('.carousel-section-indicator');
+                    indicators.forEach((indicator, index) => {
+                        indicator.classList.toggle('active', index === currentIndex);
+                    });
+                }
+
+                // Go to specific slide position
+                function goToSlide(index) {
+                    const totalPositions = getTotalPositions();
+                    currentIndex = Math.max(0, Math.min(index, totalPositions - 1));
+                    updateCarousel();
+                    resetAutoPlay();
+                }
+
+                // Next slide
+                function nextSlide() {
+                    const totalPositions = getTotalPositions();
+                    currentIndex = (currentIndex + 1) % totalPositions;
+                    updateCarousel();
+                }
+
+                // Previous slide
+                function prevSlide() {
+                    const totalPositions = getTotalPositions();
+                    currentIndex = (currentIndex - 1 + totalPositions) % totalPositions;
+                    updateCarousel();
+                }
+
+                // Start auto-play
+                function startAutoPlay() {
+                    autoPlayInterval = setInterval(nextSlide, 4000);
+                }
+
+                // Reset auto-play
+                function resetAutoPlay() {
+                    clearInterval(autoPlayInterval);
+                    startAutoPlay();
+                }
+
+                // Pause auto-play on hover
+                function pauseAutoPlay() {
+                    clearInterval(autoPlayInterval);
+                }
+
+                // Handle window resize
+                function handleResize() {
+                    currentIndex = 0; // Reset to first position
+                    createIndicators();
+                    updateCarousel();
+                }
+
+                // Initialize carousel
+                createIndicators();
+                updateCarousel();
+                startAutoPlay();
+
+                // Event listeners
+                let resizeTimer;
+                window.addEventListener('resize', function () {
+                    clearTimeout(resizeTimer);
+                    resizeTimer = setTimeout(handleResize, 250);
+                });
+
+                // Pause on hover
+                track.addEventListener('mouseenter', pauseAutoPlay);
+                track.addEventListener('mouseleave', startAutoPlay);
+
+                // Optional: Add keyboard navigation
+                document.addEventListener('keydown', function (e) {
+                    if (e.key === 'ArrowLeft') {
+                        prevSlide();
+                        resetAutoPlay();
+                    } else if (e.key === 'ArrowRight') {
+                        nextSlide();
+                        resetAutoPlay();
+                    }
+                });
+            })();
+        </script>
+    </div>
+
+
+    <!-- -----------------------------------------map ---------------------------------------------------------------------------------------- -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        .map {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: #1a1a1a;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+            border: 1px solid #333;
+            margin-bottom: 40px;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: white;
+            padding: 25px 20px;
+            text-align: center;
+            border-bottom: 2px solid #444;
+        }
+
+        .header h1 {
+            font-size: clamp(1.5em, 4vw, 2.2em);
+            margin-bottom: 8px;
+            background: linear-gradient(135deg, #ffffff 0%, #cccccc 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header p {
+            font-size: clamp(0.9em, 2.5vw, 1.1em);
+            color: #aaa;
+        }
+
+        .map-container {
+            padding: 20px;
+            background: #0a0a0a;
+            position: relative;
+        }
+
+        #map {
+            width: 100%;
+            height: 500px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+            border: 1px solid #333;
+        }
+
+        .dropdown-container {
+            position: absolute;
+            top: 30px;
+            left: 30px;
+            z-index: 1000;
+            background: rgba(26, 26, 26, 0.95);
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+            border: 1px solid #444;
+            min-width: 220px;
+        }
+
+        .dropdown-container label {
+            display: block;
+            color: #fff;
+            font-size: 0.9em;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .dropdown-container select {
+            width: 100%;
+            padding: 10px 12px;
+            background: #2d2d2d;
+            color: #fff;
+            border: 1px solid #555;
+            border-radius: 6px;
+            font-size: 0.95em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            outline: none;
+        }
+
+        .dropdown-container select:hover {
+            border-color: #777;
+            background: #353535;
+        }
+
+        .dropdown-container select:focus {
+            border-color: #999;
+            box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.1);
+        }
+
+        .dropdown-container select option {
+            background: #2d2d2d;
+            color: #fff;
+            padding: 10px;
+        }
+
+        .legend {
+            background: rgba(26, 26, 26, 0.95);
+            padding: 12px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+            position: absolute;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
+            border: 1px solid #444;
+        }
+
+        .legend h4 {
+            margin: 0 0 8px 0;
+            color: #fff;
+            font-size: 0.9em;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            margin: 5px 0;
+            font-size: 0.85em;
+            color: #ccc;
+        }
+
+        .legend-color {
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            margin-right: 8px;
+            border: 2px solid #555;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Tablet */
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+
+            #map {
+                height: 450px;
+            }
+
+            .dropdown-container {
+                top: 20px;
+                left: 20px;
+                min-width: 200px;
+                padding: 12px;
+            }
+
+            .legend {
+                bottom: 20px;
+                right: 20px;
+                padding: 10px;
+            }
+        }
+
+        /* Mobile */
+        @media (max-width: 480px) {
+            body {
+                padding: 8px;
+            }
+
+            .header {
+                padding: 20px 15px;
+            }
+
+            #map {
+                height: 400px;
+            }
+
+            .map-container {
+                padding: 15px;
+            }
+
+            .dropdown-container {
+                top: 15px;
+                left: 15px;
+                min-width: 180px;
+                padding: 10px;
+            }
+
+            .dropdown-container label {
+                font-size: 0.85em;
+            }
+
+            .dropdown-container select {
+                padding: 8px 10px;
+                font-size: 0.9em;
+            }
+
+            .legend {
+                bottom: 15px;
+                right: 15px;
+                padding: 8px;
+                font-size: 0.85em;
+            }
+
+            .legend h4 {
+                font-size: 0.85em;
+            }
+        }
+
+        /* Small Mobile */
+        @media (max-width: 360px) {
+            #map {
+                height: 350px;
+            }
+
+            .dropdown-container {
+                min-width: 160px;
+            }
+
+            .legend {
+                font-size: 0.75em;
+                padding: 6px;
+            }
+        }
+    </style>
+
+
+    <div class="map">
+        <div class="header">
+            <h1> Our Service Areas Across India</h1>
+            <p>Serving customers in key locations across Northern India</p>
+        </div>
+
+        <div class="map-container">
+            <div class="dropdown-container">
+                <label for="locationSelect">📍 Select Location:</label>
+                <select id="locationSelect" onchange="handleLocationChange()">
+                    <option value="all">All Locations</option>
+                    <option value="faridabad">Faridabad, Haryana</option>
+                    <option value="noida">Noida, Uttar Pradesh</option>
+                    <option value="gurugram">Gurugram, Haryana</option>
+                    <option value="palwal">Palwal, Haryana</option>
+                    <option value="ayodhya">Ayodhya, Uttar Pradesh</option>
+                </select>
+            </div>
+
+            <div id="map"></div>
+
+            <div class="legend">
+                <h4>📍 Service Locations</h4>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #ff6b6b;"></div>
+                    <span>Haryana</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #4ecdc4;"></div>
+                    <span>Uttar Pradesh</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Initialize map centered on India with view showing all service areas
+        const map = L.map('map').setView([25.5, 80.0], 6);
+
+        // Add dark tile layer
+        L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+            attribution: '© OpenStreetMap contributors, © CARTO',
+            maxZoom: 18,
+            minZoom: 4
+        }).addTo(map);
+
+        // Service areas with coordinates
+        const serviceAreas = {
+            faridabad: { name: 'Faridabad', lat: 28.4089, lng: 77.3178, state: 'Haryana', color: '#ff6b6b', desc: 'Industrial & Commercial Hub' },
+            noida: { name: 'Noida', lat: 28.5355, lng: 77.3910, state: 'Uttar Pradesh', color: '#4ecdc4', desc: 'IT & Technology Center' },
+            gurugram: { name: 'Gurugram', lat: 28.4595, lng: 77.0266, state: 'Haryana', color: '#ff6b6b', desc: 'Corporate & Business Hub' },
+            palwal: { name: 'Palwal', lat: 28.0229, lng: 77.0151, state: 'Haryana', color: '#ff6b6b', desc: 'Emerging Growth City' },
+            ayodhya: { name: 'Ayodhya', lat: 26.7606, lng: 82.1999, state: 'Uttar Pradesh', color: '#4ecdc4', desc: 'Historic & Cultural City' }
+        };
+
+        const markers = {};
+        const circles = {};
+
+        // Add markers and circles for each service area
+        Object.keys(serviceAreas).forEach(key => {
+            const area = serviceAreas[key];
+
+            // Add circle to show coverage area
+            const circle = L.circle([area.lat, area.lng], {
+                color: area.color,
+                fillColor: area.color,
+                fillOpacity: 0.25,
+                radius: 25000,
+                weight: 2
+            }).addTo(map);
+
+            circles[key] = circle;
+
+            // Custom marker with color
+            const customIcon = L.divIcon({
+                className: 'custom-marker',
+                html: `<div style="background: ${area.color}; width: 32px; height: 32px; border-radius: 50% 50% 50% 0; transform: rotate(-45deg); border: 3px solid #1a1a1a; box-shadow: 0 3px 10px rgba(0,0,0,0.6); display: flex; align-items: center; justify-content: center;">
+                    <span style="transform: rotate(45deg); color: white; font-weight: bold; font-size: 14px;">📍</span>
+                </div>`,
+                iconSize: [32, 32],
+                iconAnchor: [16, 32]
+            });
+
+            // Add marker
+            const marker = L.marker([area.lat, area.lng], { icon: customIcon }).addTo(map);
+
+            // Add popup with dark theme
+            marker.bindPopup(`
+                <div style="text-align: center; padding: 12px; min-width: 140px; background: #1a1a1a; color: white; border-radius: 8px;">
+                    <h3 style="margin: 0 0 8px 0; color: ${area.color}; font-size: 1.2em;">${area.name}</h3>
+                    <p style="margin: 0 0 6px 0; color: #ccc; font-size: 0.9em;">${area.state}</p>
+                    <p style="margin: 0 0 10px 0; color: #999; font-size: 0.8em;">${area.desc}</p>
+                    <div style="margin-top: 10px; padding: 6px; background: ${area.color}30; border-radius: 5px;">
+                        <p style="margin: 0; font-weight: bold; color: #fff; font-size: 0.85em;">✓ Service Available</p>
+                    </div>
+                </div>
+            `, {
+                maxWidth: 200,
+                className: 'dark-popup'
+            });
+
+            markers[key] = marker;
+        });
+
+        // Fit map to show all markers initially
+        const allMarkers = Object.values(markers);
+        const group = L.featureGroup(allMarkers);
+        map.fitBounds(group.getBounds().pad(0.3));
+
+        // Handle dropdown change
+        function handleLocationChange() {
+            const select = document.getElementById('locationSelect');
+            const value = select.value;
+
+            if (value === 'all') {
+                // Show all locations
+                map.fitBounds(group.getBounds().pad(0.3));
+            } else {
+                // Focus on selected location
+                const area = serviceAreas[value];
+                map.setView([area.lat, area.lng], 10, {
+                    animate: true,
+                    duration: 1
+                });
+
+                // Open popup for selected location
+                setTimeout(() => {
+                    markers[value].openPopup();
+                }, 500);
+            }
+        }
+
+        // Adjust map on window resize for responsiveness
+        window.addEventListener('resize', function () {
+            map.invalidateSize();
+        });
+    </script>
+
+</body>
+<footer class="footer-section">
+    <div class="footer-container">
+        <!-- Top Footer -->
+        <div class="footer-top">
+            <!-- Logo & Description Column -->
+            <div class="footer-column footer-brand">
+                <div class="footer-logo">
+                    <img src="logo.png" alt="">
+                </div>
+                <p class="footer-description">
+                    Delivering excellence across Faridabad, Noida, Gurugram, Palwal, and Ayodhya. Your trusted
+                    partner
+                    for quality services.
+                </p>
+                <div class="footer-social">
+                    <a href="https://wa.me/9910986424" target="_blank" class="social-icon" aria-label="WhatsApp">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                            fill="currentColor">
+                            <path
+                                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+                        </svg>
+                    </a>
+                    <a href="https://instagram.com/balaji_property_hub" target="_blank" class="social-icon"
+                        aria-label="Instagram">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                            fill="currentColor">
+                            <path
+                                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                        </svg>
+                    </a>
+                    <a href="https://linkedin.com/company/yourbrand" target="_blank" class="social-icon"
+                        aria-label="LinkedIn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                            fill="currentColor">
+                            <path
+                                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Quick Links Column -->
+            <div class="footer-column">
+                <h3 class="footer-title">Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="#projects">Services</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="disclaimer.html">Disclaimer</a></li>
+                </ul>
+            </div>
+
+            <!-- Services Column -->
+            <div class="footer-column">
+                <h3 class="footer-title">Our Services</h3>
+                <ul class="footer-links">
+                    <li><a href="/service1">BUY</a></li>
+                    <li><a href="/service2">SELL</a></li>
+                    <li><a href="/service3">RENT</a></li>
+                    <!-- <li><a href="/service4">Service Four</a></li>
+                    <li><a href="/service5">Service Five</a></li> -->
+                </ul>
+            </div>
+
+            <!-- Contact Info Column -->
+            <div class="footer-column">
+                <h3 class="footer-title">Contact Us</h3>
+                <ul class="footer-contact">
+                    <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                            <circle cx="12" cy="10" r="3"></circle>
+                        </svg>
+                        <span>Bala property hub-Puri Business Hub, 1st Floor D103, Sector 81, Faridabad, Haryana</span>
+                    </li>
+                    <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                            </path>
+                        </svg>
+                        <a href="tel:+911234567890">9910986424</a>
+                    </li>
+                    <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                            </path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                        <a href="mailto:balajipropertyhub01@gmail.com"> balajipropertyhub01@gmail.com</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Bottom Footer -->
+        <div class="footer-bottom">
+            <div class="footer-copyright">
+                <p>&copy; 2025 YourBrand. All rights reserved.</p>
+            </div>
+            <div class="footer-bottom-links">
+                <a href="policies.html">Privacy Policy</a>
+                <span class="separator">|</span>
+                <a href="termsandconditions.html">Terms & Conditions</a>
+                <span class="separator">|</span>
+                <a href="disclaimer.html">Disclaimer</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Footer CSS - Add this to your stylesheet or in a <style> tag -->
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    .footer-section {
+        background: linear-gradient(180deg, #0a0a0a 0%, #1a1a1a 100%);
+        color: #fff;
+        padding: 60px 20px 0;
+        border-top: 3px solid #ffd700;
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    .footer-container {
+        max-width: 1400px;
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    .footer-top {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 40px;
+        padding-bottom: 40px;
+        border-bottom: 1px solid #333;
+        width: 100%;
+    }
+
+    .footer-column {
+        display: flex;
+        flex-direction: column;
+        min-width: 0;
+    }
+
+    .footer-brand {
+        grid-column: span 1;
+    }
+
+    .footer-brand .footer-logo img {
+        /* background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        font-size: 2em;
+        margin-bottom: 15px;
+        font-weight: 700; */
+        align-items: center;
+        height: 200px;
+        width: 200px;
+    }
+
+    .footer-description {
+        color: #aaa;
+        line-height: 1.6;
+        margin-bottom: 20px;
+        font-size: 0.95em;
+    }
+
+    .footer-social {
+        display: flex;
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+
+    .social-icon {
+        width: 40px;
+        height: 40px;
+        background: #2d2d2d;
+        border: 1px solid #444;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #ffd700;
+        transition: all 0.3s ease;
+        flex-shrink: 0;
+    }
+
+    .social-icon:hover {
+        background: linear-gradient(135deg, #ffd700, #ffed4e);
+        color: #000;
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+    }
+
+    .footer-title {
+        color: #ffd700;
+        font-size: 1.3em;
+        margin-bottom: 20px;
+        font-weight: 600;
+        position: relative;
+        padding-bottom: 10px;
+    }
+
+    .footer-title::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 40px;
+        height: 2px;
+        background: linear-gradient(90deg, #ffd700, transparent);
+    }
+
+    .footer-links {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .footer-links li {
+        margin-bottom: 12px;
+    }
+
+    .footer-links a {
+        color: #ccc;
+        text-decoration: none;
+        font-size: 0.95em;
+        transition: all 0.3s ease;
+        display: inline-block;
+    }
+
+    .footer-links a:hover {
+        color: #ffd700;
+        transform: translateX(5px);
+    }
+
+    .footer-contact {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .footer-contact li {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        margin-bottom: 15px;
+        color: #ccc;
+        font-size: 0.95em;
+        line-height: 1.5;
+        word-break: break-word;
+    }
+
+    .footer-contact svg {
+        flex-shrink: 0;
+        margin-top: 2px;
+        color: #ffd700;
+        min-width: 18px;
+    }
+
+    .footer-contact a {
+        color: #ccc;
+        text-decoration: none;
+        transition: color 0.3s ease;
+        word-break: break-word;
+    }
+
+    .footer-contact a:hover {
+        color: #ffd700;
+    }
+
+    .footer-bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 25px 0;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .footer-copyright p {
+        color: #888;
+        font-size: 0.9em;
+        margin: 0;
+    }
+
+    .footer-bottom-links {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+
+    .footer-bottom-links a {
+        color: #888;
+        text-decoration: none;
+        font-size: 0.9em;
+        transition: color 0.3s ease;
+    }
+
+    .footer-bottom-links a:hover {
+        color: #ffd700;
+    }
+
+    .footer-bottom-links .separator {
+        color: #444;
+    }
+
+    /* Tablet - Large */
+    @media (max-width: 1024px) {
+        .footer-top {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+        .footer-brand {
+            grid-column: span 2;
+        }
+    }
+
+    /* Tablet - Small and Mobile - Large */
+    @media (max-width: 768px) {
+        .footer-section {
+            padding: 40px 15px 0;
+        }
+
+        .footer-top {
+            grid-template-columns: 1fr;
+            gap: 35px;
+            padding-bottom: 30px;
+        }
+
+        .footer-brand {
+            grid-column: span 1;
+        }
+
+        .footer-brand .footer-logo img {
+            /* font-size: 1.8em; */
+            align-items: center;
+        }
+
+        .footer-description {
+            font-size: 0.9em;
+        }
+
+        .footer-title {
+            font-size: 1.2em;
+            margin-bottom: 15px;
+        }
+
+        .footer-social {
+            gap: 12px;
+        }
+
+        .social-icon {
+            width: 38px;
+            height: 38px;
+        }
+
+        .footer-links a,
+        .footer-contact li {
+            font-size: 0.9em;
+        }
+
+        .footer-bottom {
+            flex-direction: column;
+            text-align: center;
+            padding: 20px 0;
+            gap: 15px;
+        }
+
+        .footer-copyright,
+        .footer-bottom-links {
+            width: 100%;
+            justify-content: center;
+        }
+    }
+
+    /* Mobile - Medium */
+    @media (max-width: 480px) {
+        .footer-section {
+            padding: 30px 15px 0;
+        }
+
+        .footer-top {
+            gap: 30px;
+        }
+
+        .footer-brand .footer-logo h2 {
+            font-size: 1.6em;
+            margin-bottom: 12px;
+        }
+
+        .footer-description {
+            font-size: 0.85em;
+            margin-bottom: 15px;
+        }
+
+        .footer-title {
+            font-size: 1.1em;
+            margin-bottom: 12px;
+        }
+
+        .footer-social {
+            gap: 10px;
+        }
+
+        .social-icon {
+            width: 36px;
+            height: 36px;
+        }
+
+        .social-icon svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a,
+        .footer-contact li {
+            font-size: 0.85em;
+        }
+
+        .footer-contact li {
+            gap: 10px;
+            margin-bottom: 12px;
+        }
+
+        .footer-contact svg {
+            width: 16px;
+            height: 16px;
+            min-width: 16px;
+        }
+
+        .footer-bottom {
+            padding: 15px 0;
+        }
+
+        .footer-copyright p {
+            font-size: 0.85em;
+        }
+
+        .footer-bottom-links {
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .footer-bottom-links a {
+            font-size: 0.85em;
+        }
+
+        .footer-bottom-links .separator {
+            display: none;
+        }
+    }
+
+    /* Mobile - Small */
+    @media (max-width: 360px) {
+        .footer-section {
+            padding: 25px 12px 0;
+        }
+
+        .footer-top {
+            gap: 25px;
+        }
+
+        .footer-brand .footer-logo h2 {
+            font-size: 1.4em;
+        }
+
+        .footer-description {
+            font-size: 0.8em;
+        }
+
+        .footer-title {
+            font-size: 1em;
+        }
+
+        .footer-social {
+            gap: 8px;
+        }
+
+        .social-icon {
+            width: 34px;
+            height: 34px;
+        }
+
+        .social-icon svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        .footer-links a,
+        .footer-contact li {
+            font-size: 0.8em;
+        }
+
+        .footer-copyright p,
+        .footer-bottom-links a {
+            font-size: 0.8em;
+        }
+    }
+</style>
+
+</html>

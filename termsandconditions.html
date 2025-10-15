@@ -1,0 +1,1412 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Terms & Conditions - Bala Ji Property Hub</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --gold: #D4AF37;
+            --light-gold: #F4E4B7;
+            --dark-gold: #B8941E;
+            --black: #000000;
+            --dark-gray: #1a1a1a;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--white);
+            color: var(--black);
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            padding: 0.75rem 1rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            background-color: var(--black) !important;
+        }
+
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 600;
+            color: var(--gold) !important;
+            text-decoration: none;
+        }
+
+        .navbar-logo {
+            width: 45px;
+            height: 45px;
+            object-fit: contain;
+        }
+
+        .brand-text {
+            color: var(--gold);
+            font-size: 1.2rem;
+            letter-spacing: 0.5px;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(135deg, var(--black) 0%, var(--dark-gray) 100%);
+            padding: 120px 0 60px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><rect width="100" height="100" fill="none"/><path d="M0 0L100 100M100 0L0 100" stroke="rgba(212,175,55,0.05)" stroke-width="1"/></svg>');
+            background-size: 100px 100px;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: var(--light-gold);
+            font-weight: 300;
+        }
+
+        .gold-line {
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--gold), var(--dark-gold));
+            margin: 20px auto;
+        }
+
+        /* Main Content Section */
+        .content-section {
+            padding: 80px 0;
+            background-color: var(--white);
+        }
+
+        .last-updated {
+            background: linear-gradient(135deg, var(--light-gold), #fff);
+            border-left: 4px solid var(--gold);
+            padding: 15px 20px;
+            margin-bottom: 40px;
+            border-radius: 5px;
+            font-size: 0.95rem;
+            color: var(--dark-gray);
+        }
+
+        .section-heading {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--black);
+            margin-top: 40px;
+            margin-bottom: 20px;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .section-heading::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 5px;
+            height: 70%;
+            background: linear-gradient(180deg, var(--gold), var(--dark-gold));
+            border-radius: 10px;
+        }
+
+        .section-subheading {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--dark-gray);
+            margin-top: 30px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-subheading i {
+            color: var(--gold);
+            font-size: 1.2rem;
+        }
+
+        .content-text {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .info-box {
+            background: linear-gradient(135deg, #f8f8f8, #fff);
+            border: 2px solid var(--light-gold);
+            border-radius: 10px;
+            padding: 25px;
+            margin: 30px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .info-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: linear-gradient(180deg, var(--gold), var(--dark-gold));
+        }
+
+        .info-box-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--black);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .info-box-title i {
+            color: var(--gold);
+        }
+
+        .list-styled {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .list-styled li {
+            padding: 12px 0;
+            padding-left: 35px;
+            position: relative;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .list-styled li::before {
+            content: '\f138';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: var(--gold);
+            font-size: 1.1rem;
+        }
+
+        .warning-box {
+            background: linear-gradient(135deg, #fff3cd, #fff);
+            border: 2px solid var(--gold);
+            border-radius: 10px;
+            padding: 25px;
+            margin: 30px 0;
+            position: relative;
+        }
+
+        .warning-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: linear-gradient(180deg, #ff9800, var(--gold));
+        }
+
+        /* Contact Box */
+        .contact-box {
+            background: linear-gradient(135deg, var(--black), var(--dark-gray));
+            color: var(--white);
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            margin: 50px 0;
+            box-shadow: 0 10px 40px rgba(212, 175, 55, 0.3);
+        }
+
+        .contact-box h3 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--gold);
+            margin-bottom: 15px;
+        }
+
+        .contact-box p {
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+            color: var(--light-gold);
+        }
+
+        .contact-methods {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .contact-btn {
+            background: linear-gradient(135deg, var(--gold), var(--dark-gold));
+            color: var(--black);
+            padding: 12px 30px;
+            font-size: 1.05rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .contact-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.5);
+            color: var(--black);
+        }
+
+        .contact-btn.whatsapp {
+            background: linear-gradient(135deg, #25D366, #128C7E);
+        }
+
+        /* Table of Contents */
+        .toc {
+            background: #f8f8f8;
+            border: 2px solid var(--light-gold);
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 40px;
+            position: sticky;
+            top: 100px;
+            max-height: calc(100vh - 140px);
+            overflow: auto;
+        }
+
+        .toc-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--black);
+            margin-bottom: 20px;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .toc-title i {
+            color: var(--gold);
+        }
+
+        .toc-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .toc-list li {
+            padding: 10px 0;
+        }
+
+        .toc-list a {
+            color: var(--dark-gray);
+            text-decoration: none;
+            font-size: 1.05rem;
+            transition: all 0.3s ease;
+            display: block;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .toc-list a::before {
+            content: '\f0da';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: var(--gold);
+            transition: left 0.3s ease;
+        }
+
+        .toc-list a:hover {
+            color: var(--gold);
+            padding-left: 30px;
+        }
+
+        .toc-list a:hover::before {
+            left: 10px;
+        }
+
+        .toc-list a.active {
+            color: var(--gold);
+            font-weight: 700;
+        }
+
+        /* Footer */
+        .footer {
+            background: linear-gradient(135deg, var(--black), var(--dark-gray));
+            color: var(--light-gold);
+            padding: 30px 0;
+            text-align: center;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .section-heading {
+                font-size: 1.6rem;
+            }
+
+            .toc {
+                position: relative;
+                top: 0;
+                max-height: none;
+            }
+
+            .navbar-logo {
+                width: 35px;
+                height: 35px;
+            }
+
+            .brand-text {
+                font-size: 1rem;
+            }
+
+            .contact-methods {
+                flex-direction: column;
+            }
+
+            .contact-btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .contact-box {
+                padding: 30px 20px;
+            }
+        }
+
+        /* Custom styles for enhanced navbar */
+        .navbar {
+            padding: 0.75rem 1rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: transform 0.3s ease;
+        }
+
+        /* .navbar-brand:hover {
+        transform: scale(1.02);
+    } */
+
+        .navbar-logo {
+            width: 45px;
+            height: 45px;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+
+        /* .navbar-logo:hover {
+        transform: rotate(5deg);
+    } */
+
+        .brand-text {
+            color: #fff;
+            font-size: 1.2rem;
+            letter-spacing: 0.5px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .navbar-toggler {
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            padding: 0.5rem 0.75rem;
+            transition: all 0.3s ease;
+        }
+
+        .navbar-toggler:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.5);
+        }
+
+        .navbar-toggler:focus {
+            box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.25);
+        }
+
+        .offcanvas-header {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            border-bottom: 2px solid #444;
+        }
+
+        .offcanvas-title {
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .offcanvas-body {
+            background: linear-gradient(135deg, #212121 0%, #1a1a1a 100%);
+        }
+
+        .nav-link {
+            padding: 0.75rem 1rem;
+            margin: 0.25rem 0;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nav-link:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0;
+            height: 3px;
+            background: linear-gradient(90deg, gold, #c9b520);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover:before {
+            width: 100%;
+        }
+
+        .nav-link:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            transform: translateX(5px);
+            color: gold !important;
+        }
+
+        .nav-link.active {
+            background-color: rgba(167, 146, 40, 0.2);
+            color: gold !important;
+        }
+
+        .nav-link i {
+            margin-right: 8px;
+            width: 20px;
+            text-align: center;
+        }
+
+        .dropdown-menu {
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            border: 1px solid #444;
+        }
+
+        .dropdown-item {
+            padding: 0.75rem 1.25rem;
+            transition: all 0.3s ease;
+        }
+
+        .dropdown-item:hover {
+            background-color: rgba(40, 167, 69, 0.2);
+            color: #28a745 !important;
+            transform: translateX(5px);
+        }
+
+        .search-form {
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .search-form .form-control {
+            border-radius: 25px;
+            padding: 0.6rem 1.2rem;
+            border: 2px solid gold;
+            background-color: rgba(255, 255, 255, 0.05);
+            color: #fff;
+            transition: all 0.3s ease;
+        }
+
+        .search-form .form-control:focus {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-color: gold;
+            box-shadow: 0 0 0 0.25rem rgba(40, 167, 69, 0.25);
+            color: #fff;
+        }
+
+        .search-form .form-control::placeholder {
+            color: rgba(188, 185, 11, 0.6);
+        }
+
+        .search-form .btn {
+            border-radius: 25px;
+            padding: 0.6rem 1.5rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .search-form .btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgb(228, 201, 51);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 576px) {
+            .brand-text {
+                font-size: 1rem;
+            }
+
+            .navbar-logo {
+                width: 35px;
+                height: 35px;
+            }
+
+            .navbar {
+                padding: 0.5rem 0.75rem;
+            }
+        }
+
+        @media (max-width: 380px) {
+            .brand-text {
+                font-size: 0.9rem;
+            }
+
+            .navbar-logo {
+                width: 30px;
+                height: 30px;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .navbar-logo {
+                width: 80px;
+                height: 80px;
+            }
+        }
+
+        .navbar {
+            padding: 0.75rem 1rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: transform 0.3s ease;
+        }
+
+        /* .navbar-brand:hover {
+        transform: scale(1.02);
+    } */
+
+        .navbar-logo {
+            width: 45px;
+            height: 45px;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+
+        /* .navbar-logo:hover {
+        transform: rotate(5deg);
+    } */
+
+        .brand-text {
+            color: #fff;
+            font-size: 1.2rem;
+            letter-spacing: 0.5px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .navbar-toggler {
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            padding: 0.5rem 0.75rem;
+            transition: all 0.3s ease;
+        }
+
+        .navbar-toggler:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.5);
+        }
+
+        .navbar-toggler:focus {
+            box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.25);
+        }
+
+        .offcanvas-header {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            border-bottom: 2px solid #444;
+        }
+
+        .offcanvas-title {
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .offcanvas-body {
+            background: linear-gradient(135deg, #212121 0%, #1a1a1a 100%);
+        }
+
+        .nav-link {
+            padding: 0.75rem 1rem;
+            margin: 0.25rem 0;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nav-link:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0;
+            height: 3px;
+            background: linear-gradient(90deg, gold, #c9b520);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover:before {
+            width: 100%;
+        }
+
+        .nav-link:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            transform: translateX(5px);
+            color: gold !important;
+        }
+
+        .nav-link.active {
+            background-color: rgba(167, 146, 40, 0.2);
+            color: gold !important;
+        }
+
+        .nav-link i {
+            margin-right: 8px;
+            width: 20px;
+            text-align: center;
+        }
+
+        /* .dropdown-menu {
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        border: 1px solid #444;
+    }
+
+    .dropdown-item {
+        padding: 0.75rem 1.25rem;
+        transition: all 0.3s ease;
+    }
+
+    .dropdown-item:hover {
+        background-color: rgba(40, 167, 69, 0.2);
+        color: #28a745 !important;
+        transform: translateX(5px);
+    }
+
+    .search-form {
+        margin-top: 2rem;
+        padding-top: 1.5rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .search-form .form-control {
+        border-radius: 25px;
+        padding: 0.6rem 1.2rem;
+        border: 2px solid gold;
+        background-color: rgba(255, 255, 255, 0.05);
+        color: #fff;
+        transition: all 0.3s ease;
+    }
+
+    .search-form .form-control:focus {
+        background-color: rgba(255, 255, 255, 0.1);
+        border-color: gold;
+        box-shadow: 0 0 0 0.25rem rgba(40, 167, 69, 0.25);
+        color: #fff;
+    }
+
+    .search-form .form-control::placeholder {
+        color: rgba(188, 185, 11, 0.6);
+    }
+
+    .search-form .btn {
+        border-radius: 25px;
+        padding: 0.6rem 1.5rem;
+        font-weight: 600;
+        transition: all 0.3s ease;
+    }
+
+    .search-form .btn:hover {
+        transform: scale(1.05);
+        box-shadow: 0 5px 15px rgb(228, 201, 51);
+    } */
+
+        /* Responsive adjustments */
+        @media (max-width: 576px) {
+            .brand-text {
+                font-size: 1rem;
+            }
+
+            .navbar-logo {
+                width: 35px;
+                height: 35px;
+            }
+
+            .navbar {
+                padding: 0.5rem 0.75rem;
+            }
+        }
+
+        @media (max-width: 380px) {
+            .brand-text {
+                font-size: 0.9rem;
+            }
+
+            .navbar-logo {
+                width: 30px;
+                height: 30px;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .navbar-logo {
+                width: 100px;
+                height: 80px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-dark fixed-top" style="background-color: black;">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">
+                <img src="logo.png" alt="Bala ji Property Hub logo" class="navbar-logo">
+                <span class="brand-text" style="color: goldenrod; "><b>BALA JI PROPERTY HUB </b></span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar"
+                aria-labelledby="offcanvasDarkNavbarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">
+                        <i class="fas fa-building me-2"></i>Bala Ji Property Hub
+                    </h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+                        aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="index.html">
+                                <i class="fas fa-home"></i>Home
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">
+                                <i class="fas fa-info-circle"></i>About
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">
+                                <i class="fas fa-envelope"></i>Contact
+                            </a>
+                        </li>
+                        <!-- <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                <i class="fas fa-th"></i>Services
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-dark">
+                                <li><a class="dropdown-item" href="#"><i class="fas fa-home me-2"></i>Residential
+                                        Properties</a></li>
+                                <li><a class="dropdown-item" href="#"><i class="fas fa-building me-2"></i>Commercial
+                                        Properties</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#"><i class="fas fa-handshake me-2"></i>Property
+                                        Consultancy</a></li>
+                            </ul>
+                        </li> -->
+                    </ul>
+                    <!-- <form class="d-flex search-form" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Search properties..."
+                            aria-label="Search" />
+                        <button class="btn btn-success" type="submit">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </form> -->
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Offcanvas for mobile nav -->
+    <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar"
+        aria-labelledby="offcanvasDarkNavbarLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">
+                <img src="logo.png" alt="logo small" style="height:28px; width:auto; margin-right:8px;"> Bala Ji
+                Property Hub
+            </h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+                aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <li class="nav-item"><a class="nav-link" href="#introduction">Introduction</a></li>
+                <li class="nav-item"><a class="nav-link" href="#acceptance">Acceptance</a></li>
+                <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                <li class="nav-item"><a class="nav-link" href="#user-obligations">User Obligations</a></li>
+                <li class="nav-item"><a class="nav-link" href="#property-info">Property Info</a></li>
+                <li class="nav-item"><a class="nav-link" href="#commission">Commission</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-content text-center">
+                <h1 class="hero-title">Terms & Conditions</h1>
+                <div class="gold-line"></div>
+                <p class="hero-subtitle">Please Read These Terms Carefully</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="content-section">
+        <div class="container">
+            <div class="row">
+                <!-- Table of Contents -->
+                <div class="col-lg-4 mb-4">
+                    <div class="toc" aria-label="Table of contents">
+                        <h3 class="toc-title">
+                            <i class="fas fa-list"></i>
+                            Quick Navigation
+                        </h3>
+                        <ul class="toc-list">
+                            <li><a href="#introduction">Introduction</a></li>
+                            <li><a href="#acceptance">Acceptance of Terms</a></li>
+                            <li><a href="#services">Our Services</a></li>
+                            <li><a href="#user-obligations">User Obligations</a></li>
+                            <li><a href="#property-info">Property Information</a></li>
+                            <li><a href="#commission">Commission & Fees</a></li>
+                            <li><a href="#intellectual-property">Intellectual Property</a></li>
+                            <li><a href="#liability">Limitation of Liability</a></li>
+                            <li><a href="#disputes">Dispute Resolution</a></li>
+                            <li><a href="#contact">Contact Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Content -->
+                <div class="col-lg-8">
+                    <!-- <div class="last-updated">
+                        <i class="fas fa-calendar-alt me-2"></i>
+                        <strong>Last Updated:</strong> October 12, 2025
+                    </div> -->
+
+                    <!-- Introduction -->
+                    <div id="introduction" tabindex="-1">
+                        <h2 class="section-heading">Introduction</h2>
+                        <p class="content-text">
+                            Welcome to Bala Ji Property Hub. These Terms and Conditions govern your use of our website
+                            and services.
+                            By accessing our website or using our real estate services, you agree to be bound by these
+                            terms.
+                        </p>
+                        <p class="content-text">
+                            Please read these terms carefully before using our services. If you do not agree with any
+                            part of these terms,
+                            you should not use our website or services.
+                        </p>
+
+                        <div class="warning-box">
+                            <h4 class="info-box-title">
+                                <i class="fas fa-exclamation-triangle"></i>
+                                Important Notice
+                            </h4>
+                            <p class="content-text mb-0">
+                                These terms constitute a legally binding agreement between you and Bala Ji Property Hub.
+                                By contacting us
+                                through email, WhatsApp, phone, or any other means, you acknowledge that you have read,
+                                understood, and
+                                agreed to these Terms and Conditions.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Acceptance of Terms -->
+                    <div id="acceptance">
+                        <h2 class="section-heading">Acceptance of Terms</h2>
+                        <p class="content-text">
+                            By using our website or services, you confirm that:
+                        </p>
+                        <ul class="list-styled">
+                            <li>You are at least 18 years of age or have parental/guardian consent</li>
+                            <li>You have the legal capacity to enter into binding contracts</li>
+                            <li>You will provide accurate and truthful information</li>
+                            <li>You agree to comply with all applicable laws and regulations</li>
+                            <li>You have read and understood our Privacy Policy</li>
+                        </ul>
+                    </div>
+
+                    <!-- Our Services -->
+                    <div id="services">
+                        <h2 class="section-heading">Our Services</h2>
+
+                        <h3 class="section-subheading">
+                            <i class="fas fa-building"></i>
+                            Real Estate Services Provided
+                        </h3>
+                        <p class="content-text">
+                            Bala Ji Property Hub provides the following services:
+                        </p>
+                        <ul class="list-styled">
+                            <li>Property buying and selling consultancy</li>
+                            <li>Property rental services</li>
+                            <li>Property viewing and site visits</li>
+                            <li>Market analysis and property valuation guidance</li>
+                            <li>Documentation assistance for property transactions</li>
+                            <li>Property investment advice</li>
+                            <li>Connecting buyers and sellers</li>
+                        </ul>
+
+                        <h3 class="section-subheading">
+                            <i class="fas fa-info-circle"></i>
+                            Service Limitations
+                        </h3>
+                        <p class="content-text">
+                            Please note that:
+                        </p>
+                        <ul class="list-styled">
+                            <li>We act as intermediaries and consultants, not property owners</li>
+                            <li>We do not guarantee property availability at all times</li>
+                            <li>Property prices and terms are subject to change without notice</li>
+                            <li>Final decisions regarding property transactions rest with buyers and sellers</li>
+                            <li>We are not responsible for third-party actions or decisions</li>
+                        </ul>
+                    </div>
+
+                    <!-- User Obligations -->
+                    <div id="user-obligations">
+                        <h2 class="section-heading">User Obligations</h2>
+
+                        <div class="info-box" aria-live="polite">
+                            <h4 class="info-box-title">
+                                <i class="fas fa-user-check"></i>
+                                You Agree To
+                            </h4>
+                            <ul class="list-styled mb-0">
+                                <li>Provide accurate and complete information when inquiring about properties</li>
+                                <li>Maintain confidentiality of sensitive information shared during transactions</li>
+                                <li>Respect appointment times and property viewing schedules</li>
+                                <li>Not misuse our contact information or services for illegal purposes</li>
+                                <li>Inform us promptly of any changes to your requirements or contact details</li>
+                                <li>Pay agreed commissions and fees in a timely manner</li>
+                                <li>Conduct yourself professionally and respectfully with our team and other parties
+                                </li>
+                            </ul>
+                        </div>
+
+                        <h3 class="section-subheading">
+                            <i class="fas fa-ban"></i>
+                            Prohibited Activities
+                        </h3>
+                        <p class="content-text">You must NOT:</p>
+                        <ul class="list-styled">
+                            <li>Provide false or misleading information</li>
+                            <li>Use our services for fraudulent or illegal activities</li>
+                            <li>Attempt to bypass our services and directly contact property owners to avoid commissions
+                            </li>
+                            <li>Copy, reproduce, or distribute our property listings without permission</li>
+                            <li>Harass, threaten, or abuse our staff or other clients</li>
+                            <li>Use automated systems to access our website or services</li>
+                            <li>Interfere with the proper functioning of our services</li>
+                        </ul>
+                    </div>
+
+                    <!-- Property Information -->
+                    <div id="property-info">
+                        <h2 class="section-heading">Property Information Accuracy</h2>
+
+                        <p class="content-text">
+                            We strive to provide accurate and up-to-date property information. However:
+                        </p>
+                        <ul class="list-styled">
+                            <li>Property details are provided by property owners and third parties</li>
+                            <li>We cannot guarantee 100% accuracy of all property descriptions</li>
+                            <li>Property prices, availability, and specifications may change without notice</li>
+                            <li>Images and virtual tours may not reflect current property conditions</li>
+                            <li>You are responsible for conducting your own due diligence and inspections</li>
+                        </ul>
+
+                        <div class="warning-box">
+                            <h4 class="info-box-title">
+                                <i class="fas fa-clipboard-check"></i>
+                                Important Disclaimer
+                            </h4>
+                            <p class="content-text mb-0">
+                                <strong>Always verify property details independently.</strong> We recommend that you
+                                personally inspect
+                                properties, review all legal documents, and consult with legal and financial advisors
+                                before making any
+                                property transaction decisions. We are not liable for any decisions made based solely on
+                                information
+                                provided through our services.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Commission & Fees -->
+                    <div id="commission">
+                        <h2 class="section-heading">Commission & Fees</h2>
+
+                        <h3 class="section-subheading">
+                            <i class="fas fa-money-bill-wave"></i>
+                            Service Charges
+                        </h3>
+                        <p class="content-text">
+                            Our services may involve the following charges:
+                        </p>
+                        <ul class="list-styled">
+                            <li><strong>Brokerage Commission:</strong> A percentage of the property transaction value
+                                (as per industry standards or as mutually agreed)</li>
+                            <li><strong>Consultation Fees:</strong> May apply for specialized services (discussed
+                                upfront)</li>
+                            <li><strong>Documentation Charges:</strong> For assistance with legal and administrative
+                                paperwork</li>
+                        </ul>
+
+                        <div class="info-box">
+                            <h4 class="info-box-title">
+                                <i class="fas fa-handshake"></i>
+                                Commission Agreement
+                            </h4>
+                            <p class="content-text">
+                                Commission rates and payment terms will be clearly communicated and agreed upon before
+                                proceeding with
+                                any property transaction. Once services are rendered, commission fees are
+                                non-refundable.
+                            </p>
+                            <p class="content-text mb-0">
+                                <strong>Non-Payment:</strong> Failure to pay agreed commissions may result in legal
+                                action and
+                                termination of services.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Intellectual Property -->
+                    <div id="intellectual-property">
+                        <h2 class="section-heading">Intellectual Property Rights</h2>
+
+                        <p class="content-text">
+                            All content on our website, including but not limited to:
+                        </p>
+                        <ul class="list-styled">
+                            <li>Text, graphics, logos, and images</li>
+                            <li>Property listings and descriptions</li>
+                            <li>Website design and layout</li>
+                            <li>Compiled property data</li>
+                            <li>Marketing materials</li>
+                        </ul>
+                        <p class="content-text">
+                            are the property of Bala Ji Property Hub or our licensors and are protected by intellectual
+                            property laws.
+                            You may not reproduce, distribute, modify, or create derivative works without our express
+                            written permission.
+                        </p>
+                    </div>
+
+                    <!-- Limitation of Liability -->
+                    <div id="liability">
+                        <h2 class="section-heading">Limitation of Liability</h2>
+
+                        <div class="warning-box">
+                            <h4 class="info-box-title">
+                                <i class="fas fa-shield-alt"></i>
+                                Liability Disclaimer
+                            </h4>
+                            <p class="content-text">
+                                To the maximum extent permitted by law, Bala Ji Property Hub shall not be liable for:
+                            </p>
+                            <ul class="list-styled mb-0">
+                                <li>Any direct, indirect, incidental, or consequential damages arising from use of our
+                                    services</li>
+                                <li>Loss of profits, data, or business opportunities</li>
+                                <li>Actions or omissions of property owners, buyers, or other third parties</li>
+                                <li>Inaccuracies in property information provided by third parties</li>
+                                <li>Changes in property prices, availability, or market conditions</li>
+                                <li>Legal disputes between buyers and sellers</li>
+                                <li>Property defects discovered after transactions</li>
+                            </ul>
+                        </div>
+
+                        <h3 class="section-subheading">
+                            <i class="fas fa-exclamation-circle"></i>
+                            Service "As Is"
+                        </h3>
+                        <p class="content-text">
+                            Our services are provided "as is" and "as available" without any warranties, express or
+                            implied.
+                            We do not warrant that our services will be uninterrupted, error-free, or meet your specific
+                            requirements.
+                        </p>
+                    </div>
+
+                    <!-- Indemnification -->
+                    <div id="indemnification">
+                        <h2 class="section-heading">Indemnification</h2>
+                        <p class="content-text">
+                            You agree to indemnify, defend, and hold harmless Bala Ji Property Hub, its owners,
+                            employees, and agents
+                            from any claims, liabilities, damages, losses, costs, or expenses (including legal fees)
+                            arising from:
+                        </p>
+                        <ul class="list-styled">
+                            <li>Your violation of these Terms and Conditions</li>
+                            <li>Your misuse of our services</li>
+                            <li>Your violation of any third-party rights</li>
+                            <li>Any fraudulent or illegal activities on your part</li>
+                        </ul>
+                    </div>
+
+                    <!-- Disputes -->
+                    <div id="disputes">
+                        <h2 class="section-heading">Dispute Resolution</h2>
+
+                        <h3 class="section-subheading">
+                            <i class="fas fa-balance-scale"></i>
+                            Governing Law
+                        </h3>
+                        <p class="content-text">
+                            These Terms and Conditions shall be governed by and construed in accordance with the laws of
+                            India.
+                            Any disputes arising from these terms shall be subject to the exclusive jurisdiction of the
+                            courts in
+                            Faridabad, Haryana.
+                        </p>
+
+                        <h3 class="section-subheading">
+                            <i class="fas fa-comments"></i>
+                            Resolution Process
+                        </h3>
+                        <p class="content-text">
+                            In case of any disputes:
+                        </p>
+                        <ul class="list-styled">
+                            <li>First, contact us directly to attempt amicable resolution</li>
+                            <li>We encourage mediation or arbitration before legal proceedings</li>
+                            <li>Both parties agree to act in good faith to resolve disputes</li>
+                            <li>Legal action should be considered as a last resort</li>
+                        </ul>
+                    </div>
+
+                    <!-- Termination -->
+                    <div id="termination">
+                        <h2 class="section-heading">Termination of Services</h2>
+                        <p class="content-text">
+                            We reserve the right to:
+                        </p>
+                        <ul class="list-styled">
+                            <li>Terminate or suspend services to any user who violates these terms</li>
+                            <li>Refuse service to anyone for any reason at our discretion</li>
+                            <li>Modify or discontinue services without prior notice</li>
+                        </ul>
+                        <p class="content-text">
+                            You may terminate your use of our services at any time by ceasing to contact us and using
+                            our website.
+                            However, obligations regarding unpaid commissions or fees remain in effect.
+                        </p>
+                    </div>
+
+                    <!-- Changes to Terms -->
+                    <div id="changes">
+                        <h2 class="section-heading">Changes to Terms & Conditions</h2>
+                        <p class="content-text">
+                            We reserve the right to modify these Terms and Conditions at any time. Changes will be
+                            effective immediately
+                            upon posting on our website with an updated "Last Updated" date.
+                        </p>
+                        <p class="content-text">
+                            Your continued use of our services after changes constitutes acceptance of the modified
+                            terms. We recommend
+                            reviewing these terms periodically.
+                        </p>
+                    </div>
+
+                    <!-- Contact -->
+                    <div id="contact">
+                        <div class="contact-box" role="region" aria-label="Contact information">
+                            <h3>
+                                <i class="fas fa-question-circle me-2"></i>
+                                Questions About These Terms?
+                            </h3>
+                            <p>
+                                If you have any questions about these Terms & Conditions or need clarification on any
+                                aspect,
+                                please don't hesitate to contact us:
+                            </p>
+                            <div class="contact-methods">
+                                <a href="https://wa.me/1234567890" class="contact-btn whatsapp" target="_blank"
+                                    rel="noopener noreferrer">
+                                    <i class="fab fa-whatsapp"></i> WhatsApp Us
+                                </a>
+                                <a href="mailto:info@balajipropertyhub.com" class="contact-btn">
+                                    <i class="fas fa-envelope"></i> Email Us
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Severability -->
+                    <div class="mt-5">
+                        <h2 class="section-heading">Severability</h2>
+                        <p class="content-text">
+                            If any provision of these Terms and Conditions is found to be invalid or unenforceable, the
+                            remaining
+                            provisions shall continue in full force and effect.
+                        </p>
+                    </div>
+
+                    <!-- Entire Agreement -->
+                    <div class="mt-4">
+                        <h2 class="section-heading">Entire Agreement</h2>
+                        <p class="content-text">
+                            These Terms and Conditions, together with our Privacy Policy, constitute the entire
+                            agreement between you
+                            and Bala Ji Property Hub regarding the use of our website and services, and supersede all
+                            prior or contemporaneous
+                            communications, proposals, and understandings, whether electronic, oral or written, between
+                            you and Bala Ji Property Hub
+                            concerning the subject matter of these Terms.
+                        </p>
+                        <p class="content-text mb-5">
+                            If you have any concerns or require clarifications about any part of these terms, please
+                            reach out to us using the contact
+                            details provided above.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6 text-md-start text-center mb-3 mb-md-0">
+                    <p class="mb-0">&copy; <span id="currentYear"></span> Bala Ji Property Hub. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end text-center">
+                    <a href="policies.html" class="me-3 text-decoration-none" style="color:inherit;">Privacy
+                        Policy</a>
+                    <a href="contact.html" class="text-decoration-none" style="color:inherit;">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Small helper scripts -->
+    <script>
+        // Set dynamic year in footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Highlight active TOC link on scroll
+        const tocLinks = document.querySelectorAll('.toc-list a');
+        const sections = Array.from(tocLinks).map(link => document.querySelector(link.getAttribute('href')));
+
+        function onScroll() {
+            const scrollPos = window.scrollY + 150; // offset for fixed navbar
+            sections.forEach((sec, i) => {
+                if (!sec) return;
+                const top = sec.offsetTop;
+                const bottom = top + sec.offsetHeight;
+                if (scrollPos >= top && scrollPos < bottom) {
+                    tocLinks.forEach(l => l.classList.remove('active'));
+                    tocLinks[i].classList.add('active');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', onScroll, { passive: true });
+        window.addEventListener('load', onScroll);
+
+        // Smooth focus for hash links (accessibility)
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    // Bootstrap offcanvas handling: close if open
+                    const offcanvas = bootstrap.Offcanvas.getInstance(document.getElementById('offcanvasDarkNavbar'));
+                    if (offcanvas) offcanvas.hide();
+                    setTimeout(() => target.focus({ preventScroll: true }), 300);
+                }
+            });
+        });
+
+        // Ensure navbar brand text doesn't wrap oddly on small screens
+        window.addEventListener('resize', () => {
+            const brandText = document.querySelector('.brand-text');
+            if (window.innerWidth < 360) brandText.style.display = 'none';
+            else brandText.style.display = '';
+        });
+    </script>
+</body>
+
+</html>

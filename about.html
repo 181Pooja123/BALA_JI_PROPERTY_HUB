@@ -586,6 +586,235 @@
                 height: 80px;
             }
         }
+        .ceo-section {
+            padding: 90px 20px;
+            background: linear-gradient(180deg, #000 0%, #0f0c05 50%, #000 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .ceo-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse 60% 50% at 30% 50%, rgba(201, 168, 76, 0.06) 0%, transparent 70%);
+        }
+
+        .ceo-inner {
+            max-width: 1300px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 420px 1fr;
+            gap: 70px;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* IMAGE */
+        .ceo-image-block {
+            position: relative;
+            width: 100%;
+        }
+
+        .ceo-frame {
+            position: relative;
+            padding: 15px;
+        }
+
+        .ceo-frame::before,
+        .ceo-frame::after {
+            content: '';
+            position: absolute;
+            width: calc(100% - 30px);
+            height: calc(100% - 30px);
+        }
+
+        .ceo-frame::before {
+            top: 0;
+            left: 0;
+            border: 1px solid #b38b30;
+        }
+
+        .ceo-frame::after {
+            bottom: 0;
+            right: 0;
+            border: 1px solid rgba(201, 168, 76, 0.3);
+        }
+
+        .ceo-photo {
+            width: 100%;
+            max-width: 100%;
+            aspect-ratio: 3/4;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* EXPERIENCE BADGE */
+        .ceo-badge {
+            position: absolute;
+            right: -15px;
+            bottom: 25px;
+            background: #c9a84c;
+            color: #000;
+            padding: 12px 18px;
+            text-align: center;
+            z-index: 5;
+        }
+
+        .ceo-badge-num {
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        .ceo-badge-text {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* CONTENT */
+        .ceo-content {
+            width: 100%;
+        }
+
+        .ceo-role {
+            color: #c9a84c;
+            font-size: 13px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        .ceo-name {
+            font-size: 52px;
+            line-height: 1.1;
+            color: white;
+            margin-bottom: 10px;
+        }
+
+        .ceo-divider {
+            width: 60px;
+            height: 1px;
+            background: #c9a84c;
+            margin: 22px 0;
+        }
+
+        .ceo-quote {
+            color: #e7c86d;
+            font-size: 24px;
+            line-height: 1.6;
+            font-style: italic;
+            padding-left: 20px;
+            border-left: 2px solid rgba(201, 168, 76, 0.4);
+            margin-bottom: 25px;
+        }
+
+        .ceo-bio {
+            color: #cccccc;
+            font-size: 16px;
+            line-height: 1.9;
+        }
+
+        /* =====================
+   TABLET RESPONSIVE
+===================== */
+        @media (max-width: 992px) {
+
+            .ceo-inner {
+                grid-template-columns: 1fr;
+                gap: 50px;
+                text-align: center;
+            }
+
+            .ceo-image-block {
+                max-width: 420px;
+                margin: auto;
+            }
+
+            .ceo-divider {
+                margin: 22px auto;
+            }
+
+            .ceo-quote {
+                border-left: none;
+                border-top: 2px solid rgba(201, 168, 76, 0.4);
+                padding-left: 0;
+                padding-top: 20px;
+            }
+
+            .ceo-badge {
+                right: 10px;
+                bottom: 20px;
+            }
+
+            .ceo-name br {
+                display: none;
+            }
+
+        }
+
+        /* =====================
+   MOBILE RESPONSIVE
+===================== */
+        @media (max-width: 768px) {
+
+            .ceo-section {
+                padding: 70px 15px;
+            }
+
+            .ceo-name {
+                font-size: 38px;
+            }
+
+            .ceo-role {
+                font-size: 12px;
+                letter-spacing: 2px;
+            }
+
+            .ceo-quote {
+                font-size: 20px;
+            }
+
+            .ceo-bio {
+                font-size: 15px;
+                line-height: 1.8;
+            }
+
+            .ceo-badge {
+                padding: 10px 14px;
+            }
+
+            .ceo-badge-num {
+                font-size: 24px;
+            }
+
+        }
+
+        /* =====================
+   SMALL MOBILE
+===================== */
+        @media (max-width: 480px) {
+
+            .ceo-name {
+                font-size: 30px;
+            }
+
+            .ceo-quote {
+                font-size: 18px;
+            }
+
+            .ceo-bio {
+                font-size: 14px;
+            }
+
+            .ceo-badge {
+                right: 5px;
+                bottom: 15px;
+                padding: 8px 12px;
+            }
+
+        }
     </style>
 </head>
 
@@ -697,6 +926,44 @@
             </div>
         </div>
     </section>
+    <!-- CEO SECTION -->
+    <section class="ceo-section">
+        <div class="ceo-inner">
+
+            <!-- Photo Block -->
+            <div class="ceo-image-block">
+                <div class="ceo-frame">
+                    <img src="rohitceo.png" alt="Mr. Rohit Mandal - CEO of Balaji Property Hub" class="ceo-photo">
+                </div>
+                <div class="ceo-badge">
+                    <div class="ceo-badge-num">8+</div>
+                    <div class="ceo-badge-text">Years of<br>Experience</div>
+                </div>
+            </div>
+
+            <!-- Content Block -->
+            <div class="ceo-content">
+                <p class="ceo-role">Leadership · Founder &amp; CEO</p>
+                <h2 class="ceo-name">Mr. Rohit<br>Mandal</h2>
+                <div class="ceo-divider"></div>
+                <p class="ceo-quote">
+                    "Buying or selling a property is not just a transaction — it is one of the most important decisions
+                    in a person's life."
+                </p>
+                <p class="ceo-bio">
+                    At Balaji Property Hub, our vision is to transform the real estate experience by creating a platform
+                    built on trust, transparency, and long-term relationships. With 8 years of industry experience, we
+                    guide every client with honesty, market expertise, and dedicated support — ensuring they make the
+                    right investment for their future.
+                    <br><br>
+                    We are committed to offering the best residential, commercial, and investment opportunities while
+                    maintaining the highest standards of professionalism. We believe success comes from customer
+                    satisfaction, ethical business practices, and delivering value beyond expectations.
+                </p>
+            </div>
+
+        </div>
+    </section>
 
     <!-- Stats Section -->
     <section class="stats-section">
@@ -710,13 +977,13 @@
                 </div>
                 <div class="col-md-3 col-6">
                     <div class="stat-card">
-                        <div class="stat-number"><i class="fas fa-plus"></i>4500</div>
+                        <div class="stat-number"><i class="fas fa-plus"></i>3500</div>
                         <div class="stat-label">Happy Clients</div>
                     </div>
                 </div>
                 <div class="col-md-3 col-6">
                     <div class="stat-card">
-                        <div class="stat-number">7<i class="fas fa-plus"></i></div>
+                        <div class="stat-number">8<i class="fas fa-plus"></i></div>
                         <div class="stat-label">Years Experience</div>
                     </div>
                 </div>
@@ -769,78 +1036,6 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Team Section -->
-    <section class="team-section">
-        <div class="container">
-            <div class="text-center mb-5">
-                <h2 class="section-title">Meet Our Team</h2>
-                <div class="gold-line"></div>
-                <p class="about-text text-center mt-4">
-                    Our dedicated team of professionals is here to guide you through every step of your real estate
-                    journey.
-                </p>
-            </div>
-            <div class="row">
-    <div class="col-lg-4 col-md-6 mb-4">
-        <div class="team-card">
-            <div class="team-image">
-                <img src="founder.png" alt="CEO OF BALAJI PROPERTY">
-            </div>
-            <div class="team-info">
-                <h3 class="team-name">Mr. Rohit Mandal</h3>
-                <p class="team-position">CEO / Co-Founder</p>
-                <p class="team-description">
-                    Qualified B.Tech graduate with over 7 years of professional experience in the real estate industry. Throughout his career, he has developed deep expertise in property management, client relations, investment advisory, and project development.
-                </p>
-            </div>
-        </div>
-    </div>
-    <div class="col-lg-4 col-md-6 mb-4">
-        <div class="team-card">
-            <div class="team-image">
-                <i class="fas fa-user-tie team-placeholder"></i>
-            </div>
-            <div class="team-info">
-                <h3 class="team-name">Mr. Ajay Upadhyay</h3>
-                <p class="team-position">Director / Co-Founder</p>
-                <p class="team-description">
-                    Over 10 years of extensive experience in the real estate industry, specializing in property development, sales strategy, and client management. With a deep understanding of market dynamics and project execution, he has successfully led numerous residential and commercial ventures.
-                </p>
-            </div>
-        </div>
-    </div>
-    <div class="col-lg-4 col-md-6 mb-4">
-        <div class="team-card">
-            <div class="team-image">
-                <img src="seniorconsultant.png" alt="senior consultant">
-            </div>
-            <div class="team-info">
-                <h3 class="team-name">Mr. Ajay Sharma</h3>
-                <p class="team-position">Senior Consultant / Co-Founder</p>
-                <p class="team-description">
-                    Over 7 years of experience in the real estate industry. He has developed strong expertise in property sales, client relations, and project management, consistently delivering high-value results.
-                </p>
-            </div>
-        </div>
-    </div>
-    <div class="col-lg-4 col-md-6 mb-4">
-        <div class="team-card">
-            <div class="team-image">
-                <img src="media.png" alt="chief marketing officer">
-            </div>
-            <div class="team-info">
-                <h3 class="team-name">Mr. Sumit Mandal</h3>
-                <p class="team-position">Chief Marketing Officer</p>
-                <p class="team-description">
-                    Sumit Mandal, the Chief Marketing Officer (CMO), leads the brand's growth with a strategic, innovative, and customer-focused approach. With deep expertise in digital marketing, real estate trends, and lead generation, he ensures the company maintains a strong market presence and delivers exceptional value to clients.
-                </p>
-            </div>
-        </div>
-    </div>
-</div>
         </div>
     </section>
 

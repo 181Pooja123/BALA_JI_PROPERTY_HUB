@@ -447,6 +447,111 @@
         }
     }
 </style>
+    <script>
+    // Show modal after 3 seconds — only once per session
+    if (!sessionStorage.getItem('builderModalShown')) {
+        setTimeout(function () {
+            var modal = document.getElementById('builderFloorModal');
+            modal.style.display = 'flex';
+            sessionStorage.setItem('builderModalShown', 'true');
+        }, 3000);
+    }
+    // Close on backdrop click
+    document.getElementById('builderFloorModal').addEventListener('click', function (e) {
+        if (e.target === this) this.style.display = 'none';
+    });
+</script>
+<!-- ======= BUILDER FLOOR MODAL ======= -->
+<div id="builderFloorModal"
+    style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.80); z-index:9999; align-items:center; justify-content:center; padding:12px;">
+    <div
+        style="background:#111; border-radius:16px; border:2px solid #eaac10; width:100%; max-width:500px; overflow:hidden; animation:slideUp 0.4s ease; position:relative; max-height:90vh; overflow-y:auto;">
+
+        <!-- Close -->
+        <button onclick="document.getElementById('builderFloorModal').style.display='none'"
+            style="position:absolute; top:8px; right:12px; background:transparent; border:none; color:#ffd700; font-size:1.8rem; cursor:pointer; z-index:10; line-height:1;">&times;</button>
+
+        <!-- Badge -->
+        <div
+            style="background:linear-gradient(90deg,#b8860b,#ffd700); color:#000; font-size:10px; font-weight:700; letter-spacing:0.1em; padding:6px 16px; text-transform:uppercase;">
+             Exclusive New Launch — Limited Units Available
+        </div>
+
+        <!-- Hero Image -->
+        <div style="width:100%; height:160px; overflow:hidden; background:linear-gradient(135deg,#1a1200,#3a2800);">
+            <img src="builder.jpeg" alt="Premium Builder Floors Faridabad"
+                style="width:100%; height:100%; object-fit:cover;" onerror="this.style.display='none'">
+        </div>
+
+        <!-- Body -->
+        <div style="padding:16px 18px 20px;">
+            <h2 style="color:#ffd700; font-size:clamp(1rem,4vw,1.3rem); margin:0 0 3px; font-weight:700;">Premium
+                Builder Floors — Faridabad</h2>
+
+            <!-- Spec Pills -->
+            <div style="display:flex; flex-wrap:wrap; gap:6px; margin-bottom:12px;">
+                <span
+                    style="background:#1e1800; border:1px solid #b8860b55; color:#ffd700; font-size:clamp(9px,2.5vw,11px); padding:3px 10px; border-radius:20px;">3
+                    BHK / 4 BHK</span>
+                <span
+                    style="background:#1e1800; border:1px solid #b8860b55; color:#ffd700; font-size:clamp(9px,2.5vw,11px); padding:3px 10px; border-radius:20px;">1
+                    sq.ft</span>
+                <!-- <span
+                    style="background:#1e1800; border:1px solid #b8860b55; color:#ffd700; font-size:clamp(9px,2.5vw,11px); padding:3px 10px; border-radius:20px;">₹85
+                    Lakh Onwards</span> -->
+                <span
+                    style="background:#1e1800; border:1px solid #b8860b55; color:#ffd700; font-size:clamp(9px,2.5vw,11px); padding:3px 10px; border-radius:20px;">Stilt
+                    + 4 Floors</span>
+                <span
+                    style="background:#1e1800; border:1px solid #b8860b55; color:#ffd700; font-size:clamp(9px,2.5vw,11px); padding:3px 10px; border-radius:20px;">Dedicated
+                    Parking</span>
+                <span
+                    style="background:#1e1800; border:1px solid #b8860b55; color:#ffd700; font-size:clamp(9px,2.5vw,11px); padding:3px 10px; border-radius:20px;">Terrace
+                    Rights</span>
+            </div>
+
+            <p style="color:#ccc; font-size:clamp(0.78rem,2.5vw,0.88rem); line-height:1.65; margin-bottom:16px;">
+                Own a luxurious independent floor with modern interiors, premium fittings, dedicated parking, and
+                terrace rights in one of Faridabad's most sought-after locations.
+            </p>
+
+            <!-- CTA -->
+            <a href="floordetails.html"
+                style="display:block; text-align:center; background:linear-gradient(90deg,#b8860b,#ffd700); color:#000; font-weight:700; font-size:clamp(0.82rem,3vw,0.95rem); padding:11px 20px; border-radius:30px; text-decoration:none;">
+                View Full Details, Photos &amp; Video &rarr;
+            </a>
+            <p style="text-align:center; color:#555; font-size:10px; margin-top:8px;">Tap &times; at top right to close
+            </p>
+        </div>
+    </div>
+</div>
+
+<style>
+    @keyframes slideUp {
+        from {
+            opacity: 0;
+            transform: translateY(40px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+</style>
+
+<script>
+    if (!sessionStorage.getItem('builderModalShown')) {
+        setTimeout(function () {
+            var m = document.getElementById('builderFloorModal');
+            m.style.display = 'flex';
+            sessionStorage.setItem('builderModalShown', 'true');
+        }, 3000);
+    }
+    document.getElementById('builderFloorModal').addEventListener('click', function (e) {
+        if (e.target === this) this.style.display = 'none';
+    });
+</script>
 
 <body>
     <nav class="navbar navbar-dark fixed-top" style="background-color: black;">
@@ -537,6 +642,214 @@
             </div>
         </div>
     </div>
+    <!-- ======= EXCLUSIVE BUILDER FLOORS SECTION ======= -->
+    <section id="builder-floors"
+        style="background:linear-gradient(135deg,#0a0800 0%,#1a1200 50%,#0a0800 100%); padding:clamp(40px,6vw,70px) clamp(14px,4vw,20px); margin:10px; border-radius:20px; border:1px solid #b8860b44; position:relative; overflow:hidden;">
+
+        <div
+            style="position:absolute; top:-80px; right:-80px; width:250px; height:250px; background:radial-gradient(circle,rgba(184,134,11,0.12) 0%,transparent 70%); border-radius:50%; pointer-events:none;">
+        </div>
+
+        <div style="max-width:1200px; margin:0 auto;">
+
+            <!-- Header -->
+            <div style="text-align:center; margin-bottom:clamp(20px,4vw,40px);">
+                <p
+                    style="color:#b8860b; font-size:clamp(9px,2vw,11px); letter-spacing:0.2em; text-transform:uppercase; font-weight:600; margin-bottom:8px;">
+                    Newly Launched &bull; Exclusive Offering</p>
+                <h2 style="color:#ffd700; font-size:clamp(1.5rem,5vw,2.8rem); font-weight:700; margin:0 0 10px;">Premium
+                    Builder Floors</h2>
+                <p
+                    style="color:#999; font-size:clamp(0.8rem,2.5vw,1rem); max-width:540px; margin:0 auto; line-height:1.7;">
+                    Independent luxurious floors in the heart of Faridabad — own your floor, own your sky. 100% legal,
+                    RERA registered.</p>
+                <div
+                    style="width:50px; height:3px; background:linear-gradient(90deg,#b8860b,#ffd700); margin:16px auto 0; border-radius:2px;">
+                </div>
+            </div>
+
+            <!-- Stat Cards — 3 per row on mobile, 5 across on desktop -->
+            <div
+                style="display:grid; grid-template-columns:repeat(3,1fr); gap:8px; margin-bottom:clamp(20px,4vw,40px); max-width:700px; margin-left:auto; margin-right:auto;">
+                <div
+                    style="background:#1e1800; border:1px solid #b8860b55; border-radius:10px; padding:clamp(8px,2vw,14px) clamp(6px,2vw,16px); text-align:center;">
+                    <div style="color:#ffd700; font-size:clamp(0.85rem,3vw,1.3rem); font-weight:700; line-height:1.2;">2
+                        &amp; 4</div>
+                    <div style="color:#888; font-size:clamp(8px,2vw,12px); margin-top:3px;">BHK Options</div>
+                </div>
+                <div
+                    style="background:#1e1800; border:1px solid #b8860b55; border-radius:10px; padding:clamp(8px,2vw,14px) clamp(6px,2vw,16px); text-align:center;">
+                    <div style="color:#ffd700; font-size:clamp(0.85rem,3vw,1.3rem); font-weight:700; line-height:1.2;">
+                        ₹1cr.</div>
+                    <div style="color:#888; font-size:clamp(8px,2vw,12px); margin-top:3px;">Starting Price</div>
+                </div>
+                <div
+                    style="background:#1e1800; border:1px solid #b8860b55; border-radius:10px; padding:clamp(8px,2vw,14px) clamp(6px,2vw,16px); text-align:center;">
+                    <div
+                        style="color:#ffd700; font-size:clamp(0.75rem,2.5vw,1.3rem); font-weight:700; line-height:1.2;">
+                        120-500</div>
+                    <div style="color:#888; font-size:clamp(8px,2vw,12px); margin-top:3px;">Sqyd</div>
+                </div>
+                <div
+                    style="background:#1e1800; border:1px solid #b8860b55; border-radius:10px; padding:clamp(8px,2vw,14px) clamp(6px,2vw,16px); text-align:center;">
+                    <div style="color:#ffd700; font-size:clamp(0.85rem,3vw,1.3rem); font-weight:700; line-height:1.2;">
+                        100%</div>
+                    <div style="color:#888; font-size:clamp(8px,2vw,12px); margin-top:3px;">Legal &amp; RERA</div>
+                </div>
+                <div
+                    style="background:#1e1800; border:1px solid #b8860b55; border-radius:10px; padding:clamp(8px,2vw,14px) clamp(6px,2vw,16px); text-align:center;">
+                    <div style="color:#ffd700; font-size:clamp(0.85rem,3vw,1.3rem); font-weight:700; line-height:1.2;">
+                        Stilt+4</div>
+                    <div style="color:#888; font-size:clamp(8px,2vw,12px); margin-top:3px;">Floor Structure</div>
+                </div>
+                <div
+                    style="background:#1e1800; border:1px solid #b8860b55; border-radius:10px; padding:clamp(8px,2vw,14px) clamp(6px,2vw,16px); text-align:center;">
+                    <div style="color:#ffd700; font-size:clamp(0.85rem,3vw,1.3rem); font-weight:700; line-height:1.2;">
+                        Ready</div>
+                    <div style="color:#888; font-size:clamp(8px,2vw,12px); margin-top:3px;">To Move</div>
+                </div>
+            </div>
+
+            <!-- Floor Cards -->
+            <div
+                style="display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:16px; margin-bottom:clamp(20px,4vw,40px);">
+
+                <!-- Card 1 -->
+                <div style="background:#1a1a1a; border:1px solid #b8860b44; border-radius:12px; overflow:hidden; transition:transform 0.3s,box-shadow 0.3s;"
+                    onmouseover="this.style.transform='translateY(-5px)';this.style.boxShadow='0 10px 30px rgba(184,134,11,0.2)'"
+                    onmouseout="this.style.transform='';this.style.boxShadow=''">
+                    <div
+                        style="width:100%; height:150px; overflow:hidden; background:linear-gradient(135deg,#1a1200,#2a1800);">
+                        <img src="builderfloor1.jpeg" alt="Ground Floor Builder Floor Faridabad"
+                            style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'">
+                    </div>
+                    <div style="padding:14px;">
+                        <div
+                            style="display:flex; justify-content:space-between; align-items:center; margin-bottom:5px;">
+                            <h3 style="color:#ffd700; font-size:clamp(0.9rem,3vw,1rem); margin:0; font-weight:600;">
+                                500sqyd builder floor</h3>
+                            <span
+                                style="background:#b8860b22; color:#ffd700; font-size:9px; padding:3px 8px; border-radius:12px; border:1px solid #b8860b55; white-space:nowrap;">Available</span>
+                        </div>
+                        <p style="color:#aaa; font-size:clamp(0.72rem,2vw,0.8rem); margin:0 0 6px;">4bhk +powder room+servent room</p>
+                        <p style="color:#777; font-size:clamp(0.7rem,2vw,0.78rem); margin:0 0 12px; line-height:1.55;">
+                            Gated Society | East Facing | premium interiors.</p>
+                        <a href="floordetails.html"
+                            style="display:block; text-align:center; border:1px solid #b8860b; color:#ffd700; font-size:clamp(0.75rem,2.5vw,0.82rem); padding:7px; border-radius:20px; text-decoration:none;">View
+                            Details &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div style="background:#1a1a1a; border:1px solid #b8860b44; border-radius:12px; overflow:hidden; transition:transform 0.3s,box-shadow 0.3s;"
+                    onmouseover="this.style.transform='translateY(-5px)';this.style.boxShadow='0 10px 30px rgba(184,134,11,0.2)'"
+                    onmouseout="this.style.transform='';this.style.boxShadow=''">
+                    <div
+                        style="width:100%; height:150px; overflow:hidden; background:linear-gradient(135deg,#1a1200,#2a1800);">
+                        <img src="builderfloor2.jpeg" alt="First Floor Builder Floor Faridabad"
+                            style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'">
+                    </div>
+                    <div style="padding:14px;">
+                        <div
+                            style="display:flex; justify-content:space-between; align-items:center; margin-bottom:5px;">
+                            <h3 style="color:#ffd700; font-size:clamp(0.9rem,3vw,1rem); margin:0; font-weight:600;">
+                                250-350 sqyd</h3>
+                            <span
+                                style="background:#b8860b22; color:#ffd700; font-size:9px; padding:3px 8px; border-radius:12px; border:1px solid #b8860b55; white-space:nowrap;">Available</span>
+                        </div>
+                        <p style="color:#aaa; font-size:clamp(0.72rem,2vw,0.8rem); margin:0 0 6px;">3 BHK & 4 BHK</p>
+                        <p style="color:#777; font-size:clamp(0.7rem,2vw,0.78rem); margin:0 0 12px; line-height:1.55;">
+                            Spacious balcony, open views, naturally lit modern spaces.</p>
+                        <a href="floordetails.html"
+                            style="display:block; text-align:center; border:1px solid #b8860b; color:#ffd700; font-size:clamp(0.75rem,2.5vw,0.82rem); padding:7px; border-radius:20px; text-decoration:none;">View
+                            Details &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- Card 3 — Featured -->
+                <div style="background:#1a1a1a; border:1px solid #ffd70066; border-radius:12px; overflow:hidden; transition:transform 0.3s,box-shadow 0.3s; position:relative;"
+                    onmouseover="this.style.transform='translateY(-5px)';this.style.boxShadow='0 10px 30px rgba(255,215,0,0.25)'"
+                    onmouseout="this.style.transform='';this.style.boxShadow=''">
+                    <div
+                        style="background:linear-gradient(90deg,#b8860b,#ffd700); color:#000; font-size:9px; font-weight:700; text-align:center; padding:4px; letter-spacing:0.08em; text-transform:uppercase;">
+                        Most Popular</div>
+                    <div
+                        style="width:100%; height:150px; overflow:hidden; background:linear-gradient(135deg,#1a1200,#2a1800);">
+                        <img src="builder.jpeg" alt="Top Floor Terrace Rights Builder Floor Faridabad"
+                            style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'">
+                    </div>
+                    <div style="padding:14px;">
+                        <div
+                            style="display:flex; justify-content:space-between; align-items:center; margin-bottom:5px;">
+                            <h3 style="color:#ffd700; font-size:clamp(0.9rem,3vw,1rem); margin:0; font-weight:600;">125-180 sqyd</h3>
+                            <span
+                                style="background:#b8860b22; color:#ffd700; font-size:9px; padding:3px 8px; border-radius:12px; border:1px solid #b8860b55; white-space:nowrap;">2
+                                Left</span>
+                        </div>
+                        <p style="color:#aaa; font-size:clamp(0.72rem,2vw,0.8rem); margin:0 0 6px;">2 BHK & 3BHK</p>
+                        <p style="color:#777; font-size:clamp(0.7rem,2vw,0.78rem); margin:0 0 12px; line-height:1.55;">
+                            Exclusive terrace, panoramic views, luxury finishes throughout.</p>
+                        <a href="floordetails.html"
+                            style="display:block; text-align:center; background:linear-gradient(90deg,#b8860b,#ffd700); color:#000; font-size:clamp(0.75rem,2.5vw,0.82rem); font-weight:700; padding:7px; border-radius:20px; text-decoration:none;">View
+                            Details &rarr;</a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Feature List -->
+            <div
+                style="background:#1e1800; border:1px solid #b8860b33; border-radius:12px; padding:clamp(14px,3vw,20px) clamp(14px,3vw,24px); margin-bottom:clamp(24px,4vw,36px);">
+                <h3 style="color:#ffd700; font-size:clamp(0.85rem,3vw,1rem); margin:0 0 12px; font-weight:600;">Why
+                    These Builder Floors?</h3>
+                <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(190px,1fr)); gap:8px;">
+                    <div
+                        style="color:#ccc; font-size:clamp(0.75rem,2.5vw,0.85rem); display:flex; align-items:flex-start; gap:7px;">
+                        <span style="color:#b8860b; flex-shrink:0; margin-top:1px;">&#10003;</span>Independent floor
+                        with separate registry
+                    </div>
+                    <div
+                        style="color:#ccc; font-size:clamp(0.75rem,2.5vw,0.85rem); display:flex; align-items:flex-start; gap:7px;">
+                        <span style="color:#b8860b; flex-shrink:0; margin-top:1px;">&#10003;</span>RERA registered —
+                        100% legal &amp; transparent
+                    </div>
+                    <div
+                        style="color:#ccc; font-size:clamp(0.75rem,2.5vw,0.85rem); display:flex; align-items:flex-start; gap:7px;">
+                        <span style="color:#b8860b; flex-shrink:0; margin-top:1px;">&#10003;</span>Dedicated covered
+                        parking per floor
+                    </div>
+                    <div
+                        style="color:#ccc; font-size:clamp(0.75rem,2.5vw,0.85rem); display:flex; align-items:flex-start; gap:7px;">
+                        <span style="color:#b8860b; flex-shrink:0; margin-top:1px;">&#10003;</span>Premium modular
+                        kitchen &amp; wardrobes
+                    </div>
+                    <div
+                        style="color:#ccc; font-size:clamp(0.75rem,2.5vw,0.85rem); display:flex; align-items:flex-start; gap:7px;">
+                        <span style="color:#b8860b; flex-shrink:0; margin-top:1px;">&#10003;</span>Vastu-compliant
+                        layout design
+                    </div>
+                    <div
+                        style="color:#ccc; font-size:clamp(0.75rem,2.5vw,0.85rem); display:flex; align-items:flex-start; gap:7px;">
+                        <span style="color:#b8860b; flex-shrink:0; margin-top:1px;">&#10003;</span>Flexible payment plan
+                        available
+                    </div>
+                </div>
+            </div>
+
+            <!-- Big CTA -->
+            <div style="text-align:center;">
+                <a href="floordetails.html"
+                    style="display:inline-block; background:linear-gradient(90deg,#b8860b,#ffd700); color:#000; font-weight:700; font-size:clamp(0.85rem,3vw,1.05rem); padding:clamp(11px,2.5vw,15px) clamp(24px,5vw,48px); border-radius:40px; text-decoration:none; box-shadow:0 0 25px rgba(184,134,11,0.3);"
+                    onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform=''">
+                    Explore All Floors — Photos, Videos &amp; Pricing &rarr;
+                </a>
+                <p style="color:#666; font-size:clamp(0.72rem,2vw,0.8rem); margin-top:10px;">or call us: <a
+                        href="tel:9910986424"
+                        style="color:#b8860b; text-decoration:none; font-weight:600;">9910986424</a></p>
+            </div>
+
+        </div>
+    </section>
     <div class="features">
         <div class="Features container mt-5">
             <h1 class="mb-4" style="text-align: center; color: white; margin-top: -10px;">Why Choose Bala Ji Property

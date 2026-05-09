@@ -1,0 +1,1069 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Luxury Builder Floors</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --black: #0a0a0a;
+      --black2: #111111;
+      --black3: #1a1a1a;
+      --white: #f5f5f0;
+      --white2: #e8e8e2;
+      --white3: #c8c8c0;
+      --gold: #d4af37;
+      --gold-lt: #f1d67a;
+      --muted: #888880;
+      --border: rgba(245, 245, 240, .08);
+      --border2: rgba(245, 245, 240, .18);
+      --r: 4px;
+      --rlg: 12px;
+    }
+
+    *,
+    *::before,
+    *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--black);
+      color: var(--white);
+      font-family: "DM Sans", sans-serif;
+      font-weight: 300;
+      overflow-x: hidden;
+    }
+
+    img,
+    video {
+      width: 100%;
+      display: block;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: min(1160px, 92%);
+      margin-inline: auto;
+    }
+
+    /* NOISE */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+      background-size: 200px 200px;
+      pointer-events: none;
+      z-index: 9999;
+      opacity: .35;
+    }
+
+    /* ── NAVBAR ── */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 998;
+      background: rgba(5, 5, 5, .93);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-inner {
+      display: flex;
+      justify-content: center;
+      gap: 0;
+      flex-wrap: wrap;
+    }
+
+    .nav-inner a {
+      padding: 16px 20px;
+      color: #9a9a9a;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 11px;
+      position: relative;
+      transition: .3s;
+    }
+
+    .nav-inner a:hover,
+    .nav-inner a.active {
+      color: var(--gold-lt);
+    }
+
+    .nav-inner a::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--gold);
+      transition: .3s;
+    }
+
+    .nav-inner a:hover::after,
+    .nav-inner a.active::after {
+      width: 100%;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      overflow: hidden;
+      background: #050505;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .hero-bg-lines {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255, 255, 255, .03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, .03) 1px, transparent 1px);
+      background-size: 80px 80px;
+    }
+
+    .hero-bg-glow {
+      position: absolute;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(212, 175, 55, .1), transparent 70%);
+      right: -150px;
+      top: -150px;
+      pointer-events: none;
+    }
+
+    .hero-body {
+      width: min(1200px, 92%);
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1fr 480px;
+      gap: 60px;
+      align-items: center;
+      padding: 100px 0 60px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 24px;
+    }
+
+    .hero-eyebrow-line {
+      width: 40px;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    .hero-eyebrow-text {
+      font-size: 10px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    .hero h1 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(2.4rem, 4.5vw, 4.4rem);
+      line-height: 1.05;
+      font-weight: 500;
+      color: #fff;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 span {
+      display: block;
+      font-size: clamp(1.1rem, 1.8vw, 1.8rem);
+      margin-top: 10px;
+      color: var(--gold);
+      font-style: italic;
+      font-weight: 400;
+      letter-spacing: 1px;
+    }
+
+    .hero-sub {
+      font-size: 15px;
+      line-height: 1.9;
+      color: #cfcfcf;
+      margin-bottom: 32px;
+      max-width: 500px;
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .tag {
+      padding: 9px 16px;
+      border-radius: 100px;
+      background: rgba(212, 175, 55, .08);
+      border: 1px solid rgba(212, 175, 55, .18);
+      color: var(--gold-lt);
+      font-size: 10px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .hero-image {
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid rgba(212, 175, 55, .15);
+      box-shadow: 0 25px 60px rgba(0, 0, 0, .5);
+    }
+
+    .hero-image img {
+      width: 100%;
+      height: 600px;
+      object-fit: cover;
+    }
+
+    /* STATS BAR */
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-top: 1px solid var(--border);
+      position: relative;
+      z-index: 2;
+    }
+
+    .stat-item {
+      padding: 24px 28px;
+      border-right: 1px solid var(--border);
+    }
+
+    .stat-item:last-child {
+      border-right: none;
+    }
+
+    .stat-num {
+      font-family: "Playfair Display", serif;
+      font-size: 1.8rem;
+      color: var(--gold);
+      margin-bottom: 6px;
+    }
+
+    .stat-label {
+      color: #9a9a9a;
+      text-transform: uppercase;
+      font-size: 10px;
+      letter-spacing: 2px;
+    }
+
+    /* ── SECTIONS ── */
+    section {
+      padding: 80px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section-header {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 32px;
+      align-items: end;
+      margin-bottom: 40px;
+    }
+
+    .section-label {
+      font-size: 10px;
+      letter-spacing: .25em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .section-label::before {
+      content: "";
+      width: 20px;
+      height: 1px;
+      background: var(--muted);
+      display: block;
+    }
+
+    .section-title {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(1.9rem, 3.5vw, 3.2rem);
+      font-weight: 400;
+      line-height: 1.1;
+    }
+
+    .price-card {
+      text-align: right;
+      padding: 18px 24px;
+      border: 1px solid var(--border2);
+      border-radius: var(--rlg);
+      background: var(--black2);
+      min-width: 180px;
+      white-space: nowrap;
+    }
+
+    .price-label {
+      font-size: 9px;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+
+    .price-val {
+      font-family: "Playfair Display", serif;
+      font-size: 1.5rem;
+      font-weight: 400;
+    }
+
+    .description {
+      padding: 24px 28px;
+      border-left: 2px solid var(--white3);
+      border-radius: 0 var(--rlg) var(--rlg) 0;
+      background: var(--black2);
+      color: var(--white3);
+      font-size: .93rem;
+      line-height: 1.85;
+      margin-bottom: 36px;
+    }
+
+    /* ── CAROUSEL ── */
+    .carousel-wrap {
+      position: relative;
+      border-radius: var(--rlg);
+      overflow: hidden;
+      border: 1px solid var(--border2);
+      background: var(--black2);
+      aspect-ratio: 16/9;
+    }
+
+    .carousel-track {
+      display: flex;
+      height: 100%;
+      transition: transform .55s cubic-bezier(.77, 0, .175, 1);
+    }
+
+    .slide {
+      min-width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .6s ease;
+    }
+
+    .carousel-wrap:hover .slide img {
+      transform: scale(1.02);
+    }
+
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: 1px solid rgba(245, 245, 240, .25);
+      background: rgba(10, 10, 10, .6);
+      color: var(--white);
+      font-size: 16px;
+      cursor: pointer;
+      z-index: 10;
+      transition: all .25s;
+      backdrop-filter: blur(10px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .carousel-btn:hover {
+      background: var(--white);
+      color: var(--black);
+    }
+
+    .prev {
+      left: 14px;
+    }
+
+    .next {
+      right: 14px;
+    }
+
+    .slide-counter {
+      position: absolute;
+      bottom: 14px;
+      right: 16px;
+      font-size: 11px;
+      letter-spacing: .1em;
+      color: rgba(245, 245, 240, .7);
+      background: rgba(10, 10, 10, .5);
+      backdrop-filter: blur(6px);
+      padding: 4px 10px;
+      border-radius: 100px;
+      border: 1px solid rgba(245, 245, 240, .12);
+    }
+
+    .dots {
+      position: absolute;
+      bottom: 14px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 7px;
+    }
+
+    .dot {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: rgba(245, 245, 240, .3);
+      cursor: pointer;
+      transition: all .3s;
+    }
+
+    .dot.active {
+      background: var(--white);
+      width: 18px;
+      border-radius: 3px;
+    }
+
+    /* ── VIDEO ── */
+    .video-wrap {
+      margin-top: 28px;
+      border-radius: var(--rlg);
+      overflow: hidden;
+      border: 1px solid var(--border2);
+      background: var(--black2);
+      aspect-ratio: 16/9;
+    }
+
+    .video-wrap video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* ── CTA ── */
+    .cta {
+      margin-top: 36px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 28px;
+      padding: 32px 36px;
+      border: 1px solid var(--border2);
+      border-radius: var(--rlg);
+      background: var(--black2);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--white3), transparent);
+    }
+
+    .cta-title {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(1.2rem, 1.8vw, 1.6rem);
+      font-weight: 400;
+      margin-bottom: 6px;
+    }
+
+    .cta-sub {
+      font-size: .85rem;
+      color: var(--muted);
+    }
+
+    .cta-btns {
+      display: flex;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+
+    .btn {
+      padding: 12px 22px;
+      border-radius: 100px;
+      border: none;
+      cursor: pointer;
+      font-size: 11px;
+      font-family: "DM Sans", sans-serif;
+      font-weight: 500;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      transition: all .25s;
+      white-space: nowrap;
+    }
+
+    .btn-white {
+      background: var(--white);
+      color: var(--black);
+    }
+
+    .btn-white:hover {
+      background: var(--white2);
+      transform: translateY(-1px);
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 1px solid var(--border2);
+      color: var(--white3);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--white3);
+      color: var(--white);
+      transform: translateY(-1px);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      padding: 36px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 14px;
+      border-top: 1px solid var(--border2);
+    }
+
+    .footer-brand {
+      font-family: "Playfair Display", serif;
+      font-size: 1.05rem;
+      font-weight: 400;
+      letter-spacing: .05em;
+    }
+
+    .footer-copy {
+      font-size: 12px;
+      color: var(--muted);
+      letter-spacing: .05em;
+    }
+
+    /* ── REVEAL ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity .65s ease, transform .65s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    /* ━━━━━━━━ RESPONSIVE ━━━━━━━━ */
+
+    /* Tablet ≤ 1024 */
+    @media(max-width:1024px) {
+      .hero-body {
+        grid-template-columns: 1fr;
+        padding: 80px 0 50px;
+        gap: 40px;
+      }
+
+      .hero-image {
+        display: none;
+      }
+
+      /* hide tall image on tablet/mobile – looks cramped */
+      .hero-sub {
+        max-width: 100%;
+      }
+    }
+
+    /* Tablet ≤ 768 */
+    @media(max-width:768px) {
+      .hero-body {
+        padding: 72px 0 44px;
+      }
+
+      .hero-stats {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .stat-item:nth-child(2) {
+        border-right: none;
+      }
+
+      .stat-item:nth-child(3) {
+        border-top: 1px solid var(--border);
+      }
+
+      .stat-item:nth-child(4) {
+        border-top: 1px solid var(--border);
+        border-right: none;
+      }
+
+      .section-header {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+
+      .price-card {
+        text-align: left;
+        width: 100%;
+      }
+
+      .cta {
+        grid-template-columns: 1fr;
+        padding: 24px 22px;
+        gap: 20px;
+      }
+
+      .cta-btns {
+        flex-direction: row;
+        width: 100%;
+      }
+
+      .btn {
+        flex: 1;
+        text-align: center;
+      }
+
+      section {
+        padding: 60px 0;
+      }
+    }
+
+    /* Mobile ≤ 540 */
+    @media(max-width:540px) {
+      .hero-body {
+        padding: 64px 0 36px;
+      }
+
+      .hero h1 {
+        font-size: 2.3rem;
+      }
+
+      .hero h1 span {
+        font-size: 1.1rem;
+      }
+
+      .hero-sub {
+        font-size: 14px;
+      }
+
+      .hero-stats {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .stat-item {
+        padding: 20px 0 20px 18px;
+      }
+
+      .stat-num {
+        font-size: 1.5rem;
+      }
+
+      .nav-inner a {
+        padding: 14px 14px;
+        font-size: 10px;
+        letter-spacing: 1.5px;
+      }
+
+      .carousel-btn {
+        width: 36px;
+        height: 36px;
+        font-size: 13px;
+      }
+
+      .prev {
+        left: 10px;
+      }
+
+      .next {
+        right: 10px;
+      }
+
+      .cta-btns {
+        flex-direction: column;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      footer {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+
+    /* Extra-small ≤ 380 */
+    @media(max-width:380px) {
+      .hero-body {
+        padding: 56px 0 28px;
+      }
+
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .hero-eyebrow-text {
+        font-size: 9px;
+        letter-spacing: 2px;
+      }
+
+      .tag {
+        font-size: 9px;
+        padding: 8px 12px;
+      }
+
+      .nav-inner {
+        gap: 0;
+      }
+
+      .nav-inner a {
+        padding: 12px 10px;
+        font-size: 9.5px;
+      }
+
+      .stat-item {
+        padding: 18px 0 18px 14px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="nav-inner">
+      <a href="#s1" class="active">500 SqYd</a>
+      <a href="#s2">250–350 SqYd</a>
+      <a href="#s3">125–180 SqYd</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-bg-lines"></div>
+    <div class="hero-bg-glow"></div>
+
+    <div class="hero-body container">
+      <div class="hero-main">
+        <div class="hero-eyebrow">
+          <span class="hero-eyebrow-line"></span>
+          <span class="hero-eyebrow-text">Premium Real Estate · Delhi NCR</span>
+        </div>
+        <h1>
+          Builder Floors
+          <span>Crafted for Luxury Living</span>
+        </h1>
+        <p class="hero-sub">
+          Elegant architecture, premium interiors, and luxury living spaces designed for modern urban lifestyles.
+        </p>
+        <div class="hero-tags">
+          <span class="tag">RERA Approved</span>
+          <span class="tag">Ready Possession</span>
+          <span class="tag">125–500 SqYd</span>
+          <span class="tag">Luxury Floors</span>
+        </div>
+      </div>
+
+      <div class="hero-image">
+        <img src="5001.jpeg" alt="Luxury Builder Floor">
+      </div>
+    </div>
+
+    <div class="hero-stats">
+      <div class="stat-item">
+        <div class="stat-num">3</div>
+        <div class="stat-label">Categories</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">125–500</div>
+        <div class="stat-label">SqYd Range</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">RERA</div>
+        <div class="stat-label">Approved</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">Ready</div>
+        <div class="stat-label">Possession</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- SECTION 1 -->
+  <section id="s1">
+    <div class="container">
+      <div class="section-header reveal">
+        <div>
+          <div class="section-label">Luxury Category</div>
+          <h2 class="section-title">500 SqYd<br>Builder Floor</h2>
+        </div>
+        <div class="price-card">
+          <div class="price-label">Starting Price</div>
+          <div class="price-val">4 Crore</div>
+        </div>
+      </div>
+
+      <div class="description reveal">
+        Experience the pinnacle of luxury living with our ultra-premium 500 square yard builder floors in Delhi NCR.
+        These expansive 4 BHK residences are designed for families who refuse to compromise — offering grand floor
+        plates, double-height lobbies, and bespoke interiors that rival the finest addresses in the city. Wide
+        tree-lined roads, ample parking, and a serene neighbourhood setting complete the picture of refined urban
+        living. A rare opportunity to own an address that truly reflects your stature.
+      </div>
+
+      <div class="carousel-wrap reveal">
+        <button class="carousel-btn prev" aria-label="Previous">&#8592;</button>
+        <button class="carousel-btn next" aria-label="Next">&#8594;</button>
+        <div class="carousel-track">
+          <div class="slide"><img src="5001.jpeg" alt="500 SqYd Floor - View 1"></div>
+          <div class="slide"><img src="5002.jpeg" alt="500 SqYd Floor - View 2"></div>
+          <div class="slide"><img src="5003.jpeg" alt="500 SqYd Floor - View 3"></div>
+          <div class="slide"><img src="5004.jpeg" alt="500 SqYd Floor - View 4"></div>
+          <div class="slide"><img src="5005.jpeg" alt="500 SqYd Floor - View 5"></div>
+          <div class="slide"><img src="5006.jpeg" alt="500 SqYd Floor - View 6"></div>
+          <div class="slide"><img src="5007.jpeg" alt="500 SqYd Floor - View 7"></div>
+          <div class="slide"><img src="5008.jpeg" alt="500 SqYd Floor - View 8"></div>
+          <div class="slide"><img src="5009.jpeg" alt="500 SqYd Floor - View 9"></div>
+          <div class="slide"><img src="50010.jpeg" alt="500 SqYd Floor - View 10"></div>
+        </div>
+        <div class="dots"></div>
+        <div class="slide-counter">1 / 10</div>
+      </div>
+
+      <div class="video-wrap reveal">
+        <video controls preload="metadata">
+          <source src="500video.mp4" type="video/mp4">
+        </video>
+      </div>
+
+      <div class="cta reveal">
+        <div>
+          <div class="cta-title">Book a Site Visit</div>
+          <div class="cta-sub">Contact us for pricing, availability, and a private property tour.</div>
+        </div>
+        <div class="cta-btns">
+          <a href="tel:9910986424"><button class="btn btn-outline">Call Now</button></a>
+          <button class="btn btn-white" onclick="whatsapp('500 SqYd Builder Floor')">WhatsApp</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 2 -->
+  <section id="s2">
+    <div class="container">
+      <div class="section-header reveal">
+        <div>
+          <div class="section-label">Premium Category</div>
+          <h2 class="section-title">250–350 SqYd<br>Builder Floor</h2>
+        </div>
+        <div class="price-card">
+          <div class="price-label">Starting Price 250sqyd/350sqyd</div>
+          <div class="price-val">2.20crore/3.35crore</div>
+        </div>
+      </div>
+
+      <div class="description reveal">
+        350 SqYd — 4 BHK
+        Price: Starting ₹3.35 Crore
+
+        Thoughtfully designed for the modern family, our 350 square yard 4 BHK builder floors strike the perfect balance
+        between space and sophistication. Each floor features generously sized bedrooms, a grand living and dining area,
+        a modular kitchen, and dedicated servant quarters — all finished with premium materials and an eye for detail.
+        Located on wide roads with excellent connectivity across Delhi NCR, these homes are ideal for families seeking a
+        luxurious lifestyle without compromise.
+      </div>
+      <div class="description reveal">
+        250 SqYd — 3 BHK & 4 BHK
+        Price: Starting ₹2.20 Crore
+
+        Our 250 square yard builder floors offer the flexibility of 3 BHK and 4 BHK configurations, making them ideal
+        for growing families and smart investors alike. Intelligently planned layouts maximise every square foot,
+        delivering spacious rooms, abundant natural light, and premium fittings throughout. With ready possession and
+        RERA-approved status, these homes promise a seamless transition into your next chapter.
+      </div>
+
+      <div class="video-wrap reveal">
+        <video controls preload="metadata">
+          <source src="250video.mp4" type="video/mp4">
+        </video>
+      </div>
+
+      <div class="cta reveal">
+        <div>
+          <div class="cta-title">Get Property Details</div>
+          <div class="cta-sub">Schedule a free consultation and site visit at your convenience.</div>
+        </div>
+        <div class="cta-btns">
+          <a href="tel:9910986424"><button class="btn btn-outline">Call Now</button></a>
+          <button class="btn btn-white" onclick="whatsapp('250–350 SqYd Builder Floor')">WhatsApp</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3 -->
+  <section id="s3">
+    <div class="container">
+      <div class="section-header reveal">
+        <div>
+          <div class="section-label">Compact Category</div>
+          <h2 class="section-title">125–180 SqYd<br>Builder Floor</h2>
+        </div>
+        <div class="price-card">
+          <div class="price-label">Starting Price</div>
+          <div class="price-val">1 to 1.05 Crore </div>
+        </div>
+      </div>
+
+      <div class="description reveal">
+        Luxury doesn't have to come with an oversized price tag. Our 125 square yard builder floors bring premium design, quality finishes, and modern living within reach — available in 2 BHK and 3 BHK configurations to suit different family sizes and budgets. Compact yet complete, these homes feature smart floor plans that eliminate wasted space, elegant interiors, and all the essentials of contemporary living. Starting at just ₹1 Crore, they present one of the most compelling value propositions in the Delhi NCR real estate market today.
+      </div>
+
+      <div class="carousel-wrap reveal">
+        <button class="carousel-btn prev" aria-label="Previous">&#8592;</button>
+        <button class="carousel-btn next" aria-label="Next">&#8594;</button>
+        <div class="carousel-track">
+          <div class="slide"><img src="1251.jpeg" alt="125 SqYd Floor - View 1"></div>
+          <div class="slide"><img src="1252.jpeg" alt="125 SqYd Floor - View 2"></div>
+          <div class="slide"><img src="1253.jpeg" alt="125 SqYd Floor - View 3"></div>
+          <div class="slide"><img src="1254.jpeg" alt="125 SqYd Floor - View 4"></div>
+          <div class="slide"><img src="1255.jpeg" alt="125 SqYd Floor - View 5"></div>
+          <div class="slide"><img src="1256.jpeg" alt="125 SqYd Floor - View 6"></div>
+          <div class="slide"><img src="1257.jpeg" alt="125 SqYd Floor - View 7"></div>
+          <!-- <div class="slide"><img src="1258.jpeg" alt="125 SqYd Floor - View 8"></div>
+          <div class="slide"><img src="1259.jpeg" alt="125 SqYd Floor - View 9"></div>
+          <div class="slide"><img src="12510.jpeg" alt="125 SqYd Floor - View 10"></div> -->
+        </div>
+        <div class="dots"></div>
+        <div class="slide-counter">1 / 7</div>
+      </div>
+
+      <div class="cta reveal">
+        <div>
+          <div class="cta-title">Schedule a Visit</div>
+          <div class="cta-sub">Connect with us for a site visit and detailed property information.</div>
+        </div>
+        <div class="cta-btns">
+          <a href="tel:9910986424"><button class="btn btn-outline">Call Now</button></a>
+          <button class="btn btn-white" onclick="whatsapp('125–180 SqYd Builder Floor')">WhatsApp</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="container">
+    <div class="footer-brand">Luxury Builder Floors</div>
+    <div class="footer-copy">© 2026 · All Rights Reserved</div>
+  </footer>
+
+  <script>
+    /* ── CAROUSEL ── */
+    document.querySelectorAll(".carousel-wrap").forEach(carousel => {
+      const track = carousel.querySelector(".carousel-track");
+      const slides = carousel.querySelectorAll(".slide");
+      const prev = carousel.querySelector(".prev");
+      const next = carousel.querySelector(".next");
+      const dotsEl = carousel.querySelector(".dots");
+      const counter = carousel.querySelector(".slide-counter");
+      const total = slides.length;
+      let idx = 0, timer, touchX = 0;
+
+      slides.forEach((_, i) => {
+        const d = document.createElement("div");
+        d.className = "dot" + (i === 0 ? " active" : "");
+        d.addEventListener("click", () => go(i));
+        dotsEl.appendChild(d);
+      });
+      const dots = dotsEl.querySelectorAll(".dot");
+
+      function go(i) {
+        idx = (i + total) % total;
+        track.style.transform = `translateX(-${idx * 100}%)`;
+        dots.forEach(d => d.classList.remove("active"));
+        dots[idx].classList.add("active");
+        if (counter) counter.textContent = `${idx + 1} / ${total}`;
+      }
+
+      function startAuto() { timer = setInterval(() => go(idx + 1), 4500); }
+      function stopAuto() { clearInterval(timer); }
+
+      next.addEventListener("click", () => { go(idx + 1); stopAuto(); startAuto(); });
+      prev.addEventListener("click", () => { go(idx - 1); stopAuto(); startAuto(); });
+
+      carousel.addEventListener("touchstart", e => { touchX = e.touches[0].clientX; }, { passive: true });
+      carousel.addEventListener("touchend", e => {
+        const dx = e.changedTouches[0].clientX - touchX;
+        if (Math.abs(dx) > 40) { go(dx < 0 ? idx + 1 : idx - 1); stopAuto(); startAuto(); }
+      });
+
+      startAuto();
+    });
+
+    /* ── ACTIVE NAVBAR ── */
+    const sections = document.querySelectorAll("section");
+    const navLinks = document.querySelectorAll(".nav-inner a");
+    const navObs = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          navLinks.forEach(a => a.classList.remove("active"));
+          const link = document.querySelector(`.nav-inner a[href="#${entry.target.id}"]`);
+          if (link) link.classList.add("active");
+        }
+      });
+    }, { threshold: 0.35 });
+    sections.forEach(s => navObs.observe(s));
+
+    /* ── SCROLL REVEAL ── */
+    const revObs = new IntersectionObserver(entries => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          entry.target.style.transitionDelay = (i * 0.04) + "s";
+          entry.target.classList.add("visible");
+          revObs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.08 });
+    document.querySelectorAll(".reveal").forEach(el => revObs.observe(el));
+
+    /* ── WHATSAPP ── */
+    function whatsapp(property) {
+      const number = "91XXXXXXXXXX";
+      const msg = `Hi, I am interested in the ${property}. Please share more details.`;
+      window.open(`https://wa.me/${number}?text=${encodeURIComponent(msg)}`, "_blank");
+    }
+  </script>
+</body>
+
+</html>
